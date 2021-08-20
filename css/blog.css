@@ -1,0 +1,32 @@
+ul{
+	list-style-type: circle;
+}
+h1{
+	font-weight: bold;
+    font-style: italic;
+    line-height: 1.2;
+}
+h3{
+	font-weight: bold;
+    font-style: italic;
+    line-height: 1.2;
+}
+body{
+	background: lightblue;
+	font-size: 22px;
+	margin: 40px auto;
+	line-height: 1.4;
+	width: 90%;
+	padding: 0 10px;
+}
+a{
+	color: blue;
+	text-decoration: inherit;
+  	background-color: inherit;
+}
+@media screen and (min-width: 800px) {
+	table {
+	   font-size: 100%;
+	}
+  }
+

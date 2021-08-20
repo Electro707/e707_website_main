@@ -1,0 +1,70 @@
+
+simpleMatrix led(CS_PIN [, rotateIndividualDislay]);
+Creates the constructor for the library.  <br>
+'led' can be anything you want. The class variable 'led' and will be used in this documentation. <br>
+The 'CS_PIN' variable can be any pin that the LED matrix's CS pin is connected to.<br>
+'rotateIndividualDislay' is a boolean to tell whether the matrices are wired/designed 180° from other matrices. This parameter is optional, by default it's set to false.
+
+led.begin();
+This initializes the matrix library which includes initializing the SPI peripheral and sending some initial commands. 
+This function is required to be called to for the library to function properly.
+
+led.setIntensity(value);
+Set the intensity of the LED matrix. 'value' can be anywhere between 0 and 15 (0x00 to 0x0F).
+
+led.setPixel(x, y, value);
+Sets a single pixel in the 4 8x8 LED matrices to either on or off depending on “value” (true for ON or false for OFF).
+
+led.clearDisplay([from, to]);
+Clears the display from 'from' matrix to 'to' matrix. <br>
+Note: The 'from' and 'to' parameters are completely optional. If not specified, this function will clear the entire display.
+
+led.fillDisplay([from, to]);
+Fills the display from “from” matrix to “to” matrix. <br>
+Note: The 'from' and 'to' parameters are completely optional. If not specified, this function will fill the entire display.
+
+led.scollText(text, del [, start_from]); 
+Scroll a word/sentence from right to left. 'text' can by any word/sentence that you want. 'del' determines the delay between each frame in mS. <br>
+'start_from' is where the text will start scrolling from. This parameter is optional, as default it's set to 1 pixel beyond the matrice's boundaries.
+
+led.scrollTextPROGMEM(text, del [, start_from]); 
+Same function as 'scollText', but the text is needs to be stored in FLASH instead of RAM <br>
+Note: For this specific function, the text must be stored in a const char datatype. 
+The text must also have the pretense PROGMEM so the string is stored in the flash memory instead of RAM. 
+This allows for arbitrarily long messages to be displayed without any RAM issues/overflow. See example Demo for more insight
+
+led.print(text [, start_from, is_text_progmem, scroll_text, del]);
+Sends some text to the display, with the option to have it scroll from right to left.<br>
+'text' is the string that you want to send (must be a char array).<br>
+'start_from' is the position where the text will start in the matrice. This parameter is optional, by default it's set to 0.<br>
+'is_text_progmem' is a boolean to tell the function whether the text is stored in Flash or RAM. This parameter is optional, by default it's set to false.<br>
+'scroll_text' is a boolean to tell the function whether to scroll the text or not. This parameter is optional, by default it's set to false.<br>
+'del' is the delay between each frame while the text is beign scrolled. This parameter is optional, by default it's set to 0.
+
+led.sendColumnBuffer(mat, column [, start_from, scroll, del]);
+Sends a custom bitmap to the matrices, with a height of 8 pixels and any number of column. Has the option to scroll said buffer from right to left<br>
+'mat' is the array that contains the bytes ("mat" must be an array of uint8_t type).
+The array is column-addressed (each bit in a byte corresponds to a row, and the array address corresponds to each column).<br>
+'column' is the number of columns that is to be sent (in most cases, this is the size of the 'mat' array).<br>
+'start_from' is where the buffer will start at in the matrices. This parameter is optional, by default it's set to 0.<br>
+'scroll' is a boolean to tell the function whether to scroll the sent buffer. This parameter is optional, by default it's set to false.<br>
+'del' is the delay between every frame of scrolling. This parameter is optional, by default it's set to 0. <br>
+The 'mat' array can be generated using my Python program found <a href='https://www.electro707.com/documentation/Software/LED_matrix_generator/' target="_blank">HERE!</a>.
+Note the software currently only generates a 8x8 bitmap or a 32x8 bitmap. The option to generate arbitrarily wide bitmap is coming soon !.
+
+led.scrollBuffer(mat, del, column [, start_from]);
+Scrolls a custom bitmap to the matrices, with a height of 8 pixels and any number of column.<br>
+'mat' is the array that contains the bytes ("mat" must be an array of uint8_t type).
+The array is column-addressed (each bit in a byte corresponds to a row, and the array address corresponds to each column).<br>
+'del' is the delay between every frame of scrolling.<br>
+'column' is the number of columns that is to be sent (in most cases, this is the size of the 'mat' array).<br>
+'start_from' is where the buffer will start at in the matrices. This parameter is optional, by default it's set to 1 pixel beyond the matrice's boundaries.<br>
+The 'mat' array can be generated using my Python program found <a href='https://www.electro707.com/documentation/Software/LED_matrix_generator/' target="_blank">HERE!</a>.
+Note the software currently only generates a 8x8 bitmap or a 32x8 bitmap. The option to generate arbitrarily wide bitmap is coming soon !.
+
+led.sendMatrixBuffer(mat);
+Sends a custom 32x8 bitmap to the matrices. <br>
+'mat' is the array that contains the bytes ("mat" must be an array of uint8_t type) of size that is equal to the number of columns in your buffer
+(For a 4 matrix display, there will be 32 columns).
+The array is column-addressed (each bit in a byte corresponds to a row, and the array address corresponds to each column).<br>
+Note: This should be only used for direct-display manipulation. If you just want to send an array, use the 'sendColumnBuffer' function instead

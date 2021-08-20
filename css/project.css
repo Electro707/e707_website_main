@@ -1,0 +1,29 @@
+th, td {
+    border: 1px solid black;
+	text-align: center;
+	padding: 10px 10px;
+	width: 900px;
+}
+.centerp{
+	text-align: center;
+	font-size: 110%;
+}
+table{
+	border-collapse: collapse;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 900px;
+	margin:auto;
+	padding: 10px 10px;
+}
+tr{background-color: #efd7c6;}
+tr.toprow{background-color: #ed853b;}
+
+@media screen and (max-width: 1050px) {
+    table, th, td {
+	width: 80%;
+	}
+}
+tr:not(.toprow) > td:hover{background-color: #ffb582;}
+td:hover a{font-size: 140%;}

@@ -1,0 +1,63 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{luacode}
+\usetikzlibrary{shapes, arrows.meta, positioning,matrix,calc}
+
+\hyphenpenalty=10000
+% https://texample.net/tikz/examples/simple-flow-chart/
+% Define block styles
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, text centered, minimum height=1cm, outer sep=0pt, inner sep=0pt, anchor=center, text width=3cm]
+\tikzstyle{blockBig} = [rectangle, draw, fill=blue!20, text centered, minimum height=1.5cm, outer sep=0pt, inner sep=0pt, anchor=center, text width=4cm]
+\tikzstyle{arr} = [line width=2pt, draw]
+% \tikzstyle{arr} = [draw, ->, line width=2pt]
+
+\begin{document}
+ \begin{tikzpicture}[node distance=0cm]
+    \renewcommand{\baselinestretch}{0.75}
+    \node[blockBig, text width=7cm, minimum height=4cm, fill=red!20] (cont) at (0,0)  {\Huge STM32F107};
+    \node[blockBig, anchor=north] (lcd) at (0,-5) {\Large LCD};
+    \node[blockBig, align=right] (eeprom) at (8,0)  {\Large EEPROM};
+    \node[blockBig] (buzz) at (0,4)  {\Large Buzzer};
+    \node[blockBig] (timebutt) at (5,4)  {\Large Time Sinse Reset Button};
+    \node[blockBig] (pot) at (-5,4)  {\Large Analog Potentiomenter};
+    \node[blockBig, align=left, minimum height=2.5cm] (joystick) at (-8,0)  {\Large Joystick\\ Buttons};
+    
+    \node[anchor=south east] at($(joystick.south east)+(0, 0)$) (joy1) {Press};
+    \node[anchor=south east] at($(joystick.south east)+(0, 0.5)$) (joy2) {Up};
+    \node[anchor=south east] at($(joystick.south east)+(0, 1)$) (joy3) {Down};
+    \node[anchor=south east] at($(joystick.south east)+(0, 1.5)$) (joy4) {Right};
+    \node[anchor=south east] at($(joystick.south east)+(0, 2)$) (joy5) {Left};
+    
+    \node[anchor=south west] at($(eeprom.south west)+(0, 0.25)$) (eeprom1) {SDA};
+    \node[anchor=south west] at($(eeprom.south west)+(0, 0.75)$) (eeprom2) {SCL};
+    
+    \node[anchor=west] at(cont.west |- joy1) (contjoy1) {PC13};
+    \node[anchor=west] at(cont.west |- joy2) (contjoy2) {PD4};
+    \node[anchor=west] at(cont.west |- joy3) (contjoy3) {PB5};
+    \node[anchor=west] at(cont.west |- joy4) (contjoy4) {PA6};
+    \node[anchor=west] at(cont.west |- joy5) (contjoy5) {PD2};
+    
+    \node[anchor=east] at(cont.east |- eeprom1) (contee1) {PB6};
+    \node[anchor=east] at(cont.east |- eeprom2) (contee2) {PB7};
+    
+    \node[anchor=east, rotate=90] at($(cont.north)+(0, 0)$) (mastbeep) {PE14};
+    \node[anchor=east, rotate=90] at($(cont.north east)+(-2, 0)$) (mastbtimeb) {PB2};
+    \node[anchor=east, rotate=90] at($(cont.north west)+(2, 0)$) (mastanalog) {PC0};
+    
+    \path[arr, {Stealth[]}-{Stealth[]}] (eeprom1.west) -- (contee1.east);
+    \path[arr, {Stealth[]}-{Stealth[]}] (eeprom2.west) -- (contee2.east);
+    
+    \node[double arrow, fill=yellow!30, rotate=90, draw, anchor=west, text width=1.62cm] at (lcd.north) {8080 Parallel Interface};
+    
+    \begin{luacode}
+        for p=1,5,1 do
+            tex.sprint(string.format("\\path[arr, -{Stealth[]}] (joy\%d.east) -- (contjoy\%d.west);", p, p))
+        end
+    \end{luacode}
+    
+    \path[arr, {Stealth[]}-] (buzz.south) -- ($(buzz.south)!0.5!(buzz.south |- mastbeep.east)$) coordinate(tmp) -- (tmp -| mastbeep.east) -- (mastbeep.east);
+    \path[arr, -{Stealth[]}] (timebutt.south) -- ($(timebutt.south)!0.5!(timebutt.south |- mastbtimeb.east)$) coordinate(tmp) -- (tmp -| mastbtimeb.east) -- (mastbtimeb.east);
+    \path[arr, -{Stealth[]}] (pot.south) -- ($(pot.south)!0.5!(pot.south |- mastanalog.east)$) coordinate(tmp) -- (tmp -| mastanalog.east) -- (mastanalog.east);
+    
+ \end{tikzpicture}
+\end{document}

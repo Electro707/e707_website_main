@@ -1,0 +1,92 @@
+[id^="buttonsarea"]{
+	background-color: #4292f4;
+	padding: 5px 0px;
+	background-clip:border-box;
+	transition: 1s;
+	display: grid;
+	grid: auto / auto;
+	width: 78px;
+	border: 2px solid black;
+}
+#wrapperbutton{
+	margin: auto;
+	width: 1248;
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: 78px 78px 78px 78px 78px 78px 78px 78px 78px 78px 78px 78px 78px 78px 78px 78px;
+}
+.row{
+	margin: auto;
+	padding: 0px 0px;
+	width: auto;
+}
+.row > button{
+	padding: 0px 0px;
+	border: 1px solid black;
+	margin: auto;
+	height: 13px;
+	width: 13px;
+	background-color: #4292f4;
+	transition: 0.25s;
+}
+#code{
+	display: grid;
+	grid: auto / auto auto;
+	padding: 4px 4px;
+
+}
+span{
+	text-align: center;
+	padding: 0px 0px;
+}
+.insidecode >p{
+	text-align: center;
+	padding: 4px 4px;
+}
+.insidecode{
+	padding: 4px 4px;
+	background-clip:content-box;
+	border-radius: 10px;
+	background-color: #f5f5f5;
+	color: black;
+	width: 90%;
+	font-size = 150%;
+	line-height: 1;
+	margin: auto;
+}
+.segmenttext{
+		font-size: 13px;
+		padding-bottom: 2px;
+}
+*{
+	transition: 0.7s;
+}
+body{
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+}
+#segmentcheckbox_label{
+	margin: auto;
+	width: 100%;
+}
+#header{
+	font-size: 300%;
+	color: #1c5468;
+	text-align: center;
+	animation-name: fadeinheader;
+	animation-duration: 2.5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+#mainbodydiv{
+	animation-name: fadein;
+	animation-duration: 1.5s;
+
+}
+h2{
+	font-size: 150%;
+	text-align: center;
+}
+h3{
+	text-align: center;
+}

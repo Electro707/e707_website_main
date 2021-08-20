@@ -1,0 +1,3 @@
+This library is designed to easily and quickly program an LED matrix with an Arduino, even with little prior knowledge of coding or electronics. This library is downloadable thru the Github repository linked bellow. The Arduino will be programmed thru the Arduino IDE, which can be downloaded <a href="https://www.arduino.cc/en/Main/Software">HERE</a>. To install the library, simply install the library as you would any other (See "Manual installation" part of instructions, which can be found <a href="https://www.arduino.cc/en/Guide/Libraries">HERE</a>).
+<br>
+To get started, after installing the library, an example can be loaded (File->Examples->Simple Matrix->Demo) and uploaded to an Arduino.

@@ -1,0 +1,61 @@
+ul{
+	list-style-type: circle;
+}
+/*h3 is for section header*/
+h3{
+	font-weight: bold;
+	font-style: italic;
+}
+h4{
+	font-weight: bold;
+}
+#warning{
+	color:#F00;
+}
+#table_header > td{
+	font-weight: bold;
+	font-size: 120%;
+}
+body{
+	background: lightblue;
+	font-size: 120%;
+	margin: 40px auto;
+	line-height: 1.4;
+	width: 80%;
+	padding: 0 10px;
+}
+a{
+	color: blue;
+	text-decoration: inherit;
+  	background-color: inherit;
+}
+table{
+	border-collapse: collapse;
+	padding: 10px 10px;
+	width: 100%;
+	max-width: 1000px;
+	font-size: 3vw;
+
+}
+@media screen and (min-width: 1000px) {
+	table {
+	   font-size: 100%;
+	}
+  }
+th, td {
+  border: 2px solid black;
+	text-align: center;
+	padding: 5px 5px;
+}
+/*CSS for any technical diagrams, including CAD stuff and schematics*/
+.technical_diagrams{
+	width: 100%;
+	max-width: 1200px;
+	background: white;
+}
+/*CSS for any images*/
+.showcase_image{
+	width: 100%;
+	max-width: 1200px;
+	background: white;
+}

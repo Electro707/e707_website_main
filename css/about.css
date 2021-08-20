@@ -1,0 +1,46 @@
+.description{
+  text-align: center;
+  font-size: 150%;
+  width:75%;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  align-items: center;
+  justify-content: center;
+}
+.SingleImage{
+  margin: auto;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: auto 120px auto;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+.SingleImage> a > img{
+/*   width: 70px; */
+  height: 70px;
+  place-self: center;
+}
+#ResumeStuff{
+  margin: auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto 120px 120px auto;
+  margin-top: 25px;
+}
+#ResumeStuff> a > img{
+  width: 70px;
+  place-self: center;
+}
+#SocialMedia{
+  margin: auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto 120px 120px 120px 120px auto;
+  margin-top: 25px;
+}
+#SocialMedia> a > img{
+  width: 70px;
+  height: 70px;
+  place-self: center;
+}

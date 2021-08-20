@@ -1,0 +1,101 @@
+*{
+	transition: 0.5s;
+}
+html, body {
+	background-color: #ffffff;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+#mainbodydiv{
+	padding-bottom: 1.5rem;
+/* 	animation-name: fadein; */
+/* 	animation-duration: 1.5s; */
+}
+body{
+	font-family: 'Quicksand', sans-serif;
+	box-sizing: border-box;
+}
+h2{
+	font-size: 150%;
+}
+#wrap{
+	min-height: 100%;
+}
+#header{
+	height:150px;
+	padding: 10px;
+	animation-name: fadeinheader;
+	animation-duration: 1.25s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+	transform: scale(0);
+}
+a{ /* https://stackoverflow.com/questions/8919682/remove-all-styling-formatting-from-hyperlinks */
+  color: inherit;
+  text-decoration: inherit;
+  background-color: inherit;
+}
+
+.navbar {
+/* 	opacity: 0; */
+	background-color: #3a9ad9;
+	color: white;
+/* 	animation-name: fadein; */
+/* 	animation-duration: 2s; */
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+li.navbar > a{
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+}
+ul.navbar{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	overflow: hidden;
+	width: 100%;
+}
+li.navbar{
+	padding: 10px;
+	font-size: 120%;
+}
+li.navbar:hover{
+	background-color: #fff;
+}
+li.navbar:hover > a{
+  color: #3a9ad9;
+}
+.footer{
+/* 	animation-name: fadein; */
+/* 	animation-duration: 2s; */
+	margin-top: -1.5rem;
+	margin-bottom: 0px;
+	text-align: center;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+	height: 1.5rem;
+}
+@keyframes fadein {
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+@keyframes fadeinheader {
+	0%{
+		opacity: 0;
+		transform: scale(0);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
+}

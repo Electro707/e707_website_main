@@ -1,0 +1,54 @@
+#introp{
+	text-align: center;
+}
+#introp > p{
+	text-align: center;
+	font-size: 20px;
+}
+img {
+	opacity: 0;
+	animation-name: fadein;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	filter: grayscale(0%);
+}
+.gallery > img{
+	animation-delay: 1s;
+}
+.imggrid{
+	display: grid;
+	grid-template-columns: auto auto auto;
+	padding: 10px;
+
+}
+.gallery{
+	align-self: center;
+}
+a.gallery img {
+    width: 100%;
+    height: auto;
+	border-radius: 10px;
+}
+#movegallery{
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		margin-top: 10px; margin-bottom: 20px;
+}
+@media screen and (max-width: 1050px) {
+    .imggrid{
+	grid-template-columns: auto auto;
+	}
+}
+@media screen and (max-width: 600px) {
+    .imggrid{
+	grid-template-columns: auto;
+	}
+	::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+	}
+}

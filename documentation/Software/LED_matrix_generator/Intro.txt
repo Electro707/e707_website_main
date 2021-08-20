@@ -1,0 +1,1 @@
+The purpose of this software is to generate an column-addressed array based off a visual representation of the matrix. This array then can be copied unto an Arduino example (current tested only on my library) in order to display the create image.

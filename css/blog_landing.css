@@ -1,0 +1,11 @@
+#mainbodydiv{
+    font-size: 20px;
+}
+#mainbodydiv > p{
+	text-align: center;
+}
+#mainbodydiv > ul{
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,15 @@
+"PCB Reference","Part Description","Package Size", "Quantity per Board"
+U1,555-Timer,8-DIP,1
+U2&U4,74HC595 Shift Register,SOIC-16,1
+U3,7805 Voltage Regulator,SOT-223,1
+Q1,2N3904 NPN Transistor,SOT-23,1
+J1,Micro USB,Molex 47346,1
+BT1,5-9V Battery Connector,2-pin 0.1" header,1
+C2, 4.7uF Bypass Capacitor,SMD-1206,1
+R1,4.7KΩ Resistor,THT,1
+C1,100uF Capacitor,THT,1
+D1-D17,5mm LED,THT,17
+R2-R18,330Ω Resistor,SMD-1206,17
+D18-D21,Right Angle LED,1206,4
+R19,56Ω Resistor,THT,1
+R19-R20,10kΩ Resistor,SMD-1206,2
