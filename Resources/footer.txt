@@ -1,1 +1,2 @@
 <p style="margin:0px; padding:0px">2021, Jamal Bouajjaj</p>
+<a style="margin:0px; padding:0px" href="https://github.com/Electro707/e707_website_main" alt="Website's source code">AGPL3.0. Click me for this site's source code</a>
