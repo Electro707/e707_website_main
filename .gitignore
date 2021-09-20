@@ -2,10 +2,10 @@
 *.bak
 
 # Deprecated blog directory. Now an entire website is used for it
-blogs_
+main/blogs_
 
 # Source code for something. Well be published later as it's own repo
-documentation/School/ELEC3371Project8/source_code
+main/documentation/School/ELEC3371Project8/source_code
 
 # Latex stuff
 *.aux
