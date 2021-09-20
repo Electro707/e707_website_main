@@ -1,0 +1,17 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
+
+Welcome to my personal blog! Here I will ramble, talk about electornics, and more. 
+
+This page is created with Jekyll with the jekyll-theme-console theme. Check both of them out bellow:
+
+[jekyll](https://jekyllrb.com/)
+[jekyll-theme-console](https://github.com/b2a3e8/jekyll-theme-console)
+
+If you are do inclined, also check out my other socials here:
+
+[Github](https://github.com/Electro707)
+[Twitter](https://twitter.com/electro_707)
