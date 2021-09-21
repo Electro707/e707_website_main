@@ -25,9 +25,9 @@
 
         <h3>Introduction:</h3>
         <p>
-            This project, which was my final project for my Emmbedded Systems Class, required that I recreate the infamouse Space Invaders game. The dev board we were given is the <a href="https://www.mikroe.com/easymx-pro-stm32">MikroE for ARM V7</a>. Altough the company does make an IDE which was used/tough throuout the class, I though it was utter shit (both the IDE and the compiler) and instead opted to use ST's CubeIDE. As a bonus, that IDE is able to run on Linux. But that meant that I would have to write my own drivers for the LCD and EEPROM, which I took as a challenge.<br>
+            This project, which was my final project for my Embedded Systems Class, required that I recreate the infamous Space Invaders game. The development board we were given is the <a href="https://www.mikroe.com/easymx-pro-stm32">MikroE for ARM V7</a>. Although the company does make an IDE which was used/tough throughout the class, I though it was utter shit (both the IDE and the compiler) and instead opted to use ST's CubeIDE. As a bonus, that IDE is able to run on Linux. But that meant that I would have to write my own drivers for the LCD and EEPROM, which I took as a challenge.<br>
             The game was to be shown on an ILI9341 driven LCD module. Sound was to be generated with a passive buzzer with PWM. The top score was stored on a 24AA01 1k EEPROM.  <br>
-            If you are intrested in this project, I recommend that you check out the report below, as I won't be typing the same context twice.
+            If you are interested in this project, I recommend that you check out the report below, as I won't be typing the same context twice.
         </p>
 
         <h3>Python Helper</h3>

@@ -73,7 +73,11 @@
           </tr>
           <tr>
             <td>School Project</td>
-            <td><a href="documentation/School/ELEC3371Project8/index.php">Final Project - Space Invaders</a></td>
+            <td><a href="documentation/School/ELEC3371Project8/index.php">Embedded Systems Final Project - Space Invaders</a></td>
+          </tr>
+          <tr>
+            <td>School Project</td>
+            <td><a href="documentation/School/JuniorDesignProject/index.php">Junior Design Project - Space Invaders</a></td>
           </tr>
           <tr>
             <td>Library</td>
