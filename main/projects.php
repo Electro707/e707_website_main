@@ -36,6 +36,10 @@
             <td><a href="documentation/Libraries/simple_led_library/index.html" >Simple LED Matrix Arduino Library</a></td>
           </tr>
           <tr>
+            <td>Python Application</td>
+            <td><a href="https://e7epd.readthedocs.io" >E707 Parts Database Project</a></td>
+          </tr>
+          <tr>
             <td>Soldering Kit PCB</td>
             <td><a href="documentation/PCB/2019_Ghost/index.php">Ghost Soldering Kit - 2019</a></td>
           </tr>
@@ -45,7 +49,7 @@
           </tr>
           <tr>
             <td>Project (PCB+Code)</td>
-            <td><a href="documentation/PCB/Connect4_V1/index.php">Digital Connect 4</a></td>
+            <td><a href="documentation/PCB/Connect4_V1/index.php">Digital Connect 4 Rev 1</a></td>
           </tr>
           <tr>
             <td>Soldering Kit PCB</td>
@@ -60,7 +64,7 @@
             <td><a href="documentation/PCB/2019_Ornament/index.php">Ornament - 2019</a></td>
           </tr>
           <tr>
-            <td>Software</td>
+            <td>Python Application</td>
             <td><a href="documentation/Software/LED_matrix_generator">LED Matrix Array Generator</a></td>
           </tr>
           <tr>
