@@ -1,8 +1,5 @@
 RewriteEngine On
 
-# Rewrite condition for the blog page
-RewriteRule ^blog$ https://blogs.electro707.com/
-
 RewriteCond %{HTTP_HOST} !^localhost$ [NC]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L]
