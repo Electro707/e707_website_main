@@ -81,11 +81,15 @@
           </tr>
           <tr>
             <td>School Project</td>
-            <td><a href="documentation/School/JuniorDesignProject/index.php">Junior Design Project - Space Invaders</a></td>
+            <td><a href="documentation/School/JuniorDesignProject/index.php">Junior Design Project - LIFI Transmission</a></td>
           </tr>
           <tr>
             <td>Library</td>
             <td><a href="documentation/Libraries/e707_b_nodemcu_shield_library/index.html" >E707 Basic NodeMCU-V2 Shield Library</a></td>
+          </tr>
+          <tr>
+            <td>Software</td>
+            <td><a href="https://e7epd.readthedocs.io" >E707 Electronics Parts Management Database</a></td>
           </tr>
         </table>
       </div>
