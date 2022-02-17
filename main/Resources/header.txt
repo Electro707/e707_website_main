@@ -1,9 +1,9 @@
 <center><img src="/Resources/logo707.png" alt="Logo" id="header"></center>
 <ul class="navbar">
-<li class="navbar"><a href="javascript:navbarlink(0);">Home</a></li>
-<li class="navbar"><a href="javascript:navbarlink(1);">Projects</a></li>
-<li class="navbar"><a href="javascript:navbarlink(5);">Kits</a></li>
-<li class="navbar"><a href="javascript:navbarlink(4);">Blogs</a></li>
-<li class="navbar"><a href="javascript:navbarlink(3);">Online Tools</a></li>
-<li class="navbar"><a href="javascript:navbarlink(2);">About me</a></li>
+<li class="navbar"><a href="/">Home</a></li>
+<li class="navbar"><a href="/projects">Projects</a></li>
+<li class="navbar"><a href="https://kits.electro707.com">Kits</a></li>
+<li class="navbar"><a href="https://blogs.electro707.com">Blogs</a></li>
+<li class="navbar"><a href="/tools">Online Tools</a></li>
+<li class="navbar"><a href="/about">About me</a></li>
 </ul>

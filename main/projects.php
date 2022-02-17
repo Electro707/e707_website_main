@@ -91,6 +91,10 @@
             <td>Software</td>
             <td><a href="https://e7epd.readthedocs.io" >E707 Electronics Parts Management Database</a></td>
           </tr>
+          <tr>
+            <td>Software</td>
+            <td><a href="https://pynec-utilities.readthedocs.io">PyNEC Utilities</a></td>
+          </tr>
         </table>
       </div>
       <br>
