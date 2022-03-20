@@ -48,7 +48,7 @@
             <td><a href="documentation/PCB/2019_Pumpkin/index.php">Pumpkin Soldering Kit - 2019</a></td>
           </tr>
           <tr>
-            <td>Project (PCB+Code)</td>
+            <td>Project</td>
             <td><a href="documentation/PCB/Connect4_V1/index.php">Digital Connect 4 Rev 1</a></td>
           </tr>
           <tr>
@@ -94,6 +94,10 @@
           <tr>
             <td>Software</td>
             <td><a href="https://pynec-utilities.readthedocs.io">PyNEC Utilities</a></td>
+          </tr>
+          <tr>
+            <td>Project</td>
+            <td><a href="https://github.com/Electro707/camera_remote_shutter">Remote Camera Shutter</a></td>
           </tr>
         </table>
       </div>

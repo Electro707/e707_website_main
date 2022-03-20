@@ -1,4 +1,4 @@
-<center><img src="/Resources/logo707.png" alt="Logo" id="header"></center>
+<center><img src="/Resources/logo707.png" alt="Logo" id="img_header"></center>
 <ul class="navbar">
 <li class="navbar"><a href="/">Home</a></li>
 <li class="navbar"><a href="/projects">Projects</a></li>

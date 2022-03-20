@@ -22,7 +22,7 @@ h2{
 #wrap{
 	min-height: 100%;
 }
-#header{
+#img_header{
 	height:150px;
 	padding: 10px;
 	animation-name: fadeinheader;
@@ -62,7 +62,8 @@ ul.navbar{
 }
 li.navbar{
 	padding: 10px;
-	font-size: 120%;
+	font-size: 100%;	/*Fallback*/
+	font-size: 1em;
 }
 li.navbar:hover{
 	background-color: #fff;
