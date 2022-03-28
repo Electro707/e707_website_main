@@ -33,7 +33,7 @@
           </tr>
           <tr>
             <td>Library</td>
-            <td><a href="documentation/Libraries/simple_led_library/index.html" >Simple LED Matrix Arduino Library</a></td>
+            <td><a href="documentation/Libraries/simple_led_library/stable/index.html" >Simple LED Matrix Arduino Library</a></td>
           </tr>
           <tr>
             <td>Python Application</td>
