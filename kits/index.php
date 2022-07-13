@@ -8,7 +8,6 @@
     </head>
     
     <body>
-        <script>0</script>
         <div id="intro">
             <h1>Electro707's Kits Main Page</h1>
             <p>Welcome to my kits webite, where I showcase all of the kits currently/previously sellable on my Tindie account, as well as direct you to each's documentation page</p>

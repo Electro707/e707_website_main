@@ -9,7 +9,6 @@
     ?>
     <link rel="stylesheet" type="text/css" href="css/index.css?v=1.2">
     <link href="Resources/lightbox.css?v=1" type="text/css" rel="stylesheet" />
-    <script src="Resources/lightbox.js?v=1" type="text/javascript" charset="utf-8"></script>
 
     <title>Jamal Bouajjaj</title>
   </head>
@@ -26,21 +25,15 @@
 
       <div id="mainbodydiv">
         <div id="introp">
-          <p>Welcome to my website.</p>
-          <p>Here are pictures I have taken throughout the past</p>
-          <h1>Pictures:</h1>
-        </div>
-        <div id="movegallery">
-            <img src="Resources/prev.png" height="44px" onclick="changeimage(false,true);">
-            <div style="width:30%;"></div>
-            <img src="Resources/next.png" height="44px" onclick="changeimage(true,false);">
+          <p>Welcome to my website (Now JS free!)</p>
+          <p>Here are pictures I have taken throughout the past (very old pictures, there are here more to fill up space :P)</p>
         </div>
 
         <div class="imggrid">
         <?php
         $num = 1;
         for($num;$num<=13;$num++){
-          echo ' <a class="gallery" href="Resources/Pictures/',$num,'.jpeg" data-lightbox="image" style="display: none;"><img src="Resources/Pictures/c/',$num,'s.jpg"style="display: none;"></a> ';
+          echo '<a class="gallery" href="Resources/Pictures/',$num,'.jpeg"><img src="Resources/Pictures/c/',$num,'s.jpg"style="display: block;"></a> ';
         }
         ?>
         </div>
@@ -54,6 +47,5 @@
       fclose($file);
     ?>
     </div>
-    <script src="js/index.js?v=1.2"></script>
   </body>
 </html>

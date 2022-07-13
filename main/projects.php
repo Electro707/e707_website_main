@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php
-      $file = fopen("Resources/head.txt", "r");
-      echo file_get_contents("Resources/head.txt");
-      fclose($file);
-    ?>
+      <?php
+        $file = fopen("Resources/head.txt", "r");
+        echo file_get_contents("Resources/head.txt");
+        fclose($file);
+      ?>
     <link rel="stylesheet" type="text/css" href="css/project.css?v=1.2">
 
     <title>Projects</title>
@@ -54,11 +54,11 @@
           </tr>
           <tr>
             <td>Library</td>
-            <td><a href="documentation/Libraries/e707_b_nodemcu_shield_library/index.html" >E707 Basic NodeMCU-V2 Shield Library</a></td>
+            <td><a href="documentation/Libraries/e707_b_nodemcu_shield_library/index.html">E707 Basic NodeMCU-V2 Shield Library</a></td>
           </tr>
           <tr>
             <td>Software</td>
-            <td><a href="https://e7epd.readthedocs.io" >E707 Electronics Parts Management Database</a></td>
+            <td><a href="https://e7epd.readthedocs.io">E707 Electronics Parts Management Database</a></td>
           </tr>
           <tr>
             <td>Software</td>
