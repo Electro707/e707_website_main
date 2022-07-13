@@ -26,7 +26,7 @@
       <div id="mainbodydiv">
         <div id="introp">
           <p>Welcome to my website (Now JS free!)</p>
-          <p>Here are pictures I have taken throughout the past (very old pictures, there are here more to fill up space :P)</p>
+          <p>Here are pictures I have taken throughout the past (very old pictures, they are here to fill up space :P)</p>
         </div>
 
         <div class="imggrid">
