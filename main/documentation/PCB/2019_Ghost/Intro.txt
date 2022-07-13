@@ -1,1 +1,0 @@
-This project is a PCB soldering kit in the shape of a ghost. The kit has been designed with some SMD and THT parts. If you plan to use this design as a kit for people who have no/minimal soldering experience, it is recommended to pre-solder the SMD parts before giving the board to them for them to solder.

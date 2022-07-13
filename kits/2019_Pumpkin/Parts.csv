@@ -1,0 +1,9 @@
+PCB Reference," Part Description",Package Size," Quantity per Board"
+"R1, R3",1kΩ Resistor,SMD-1206,2
+R2,1MΩ Resistor,SMD-1206,1
+U1,Attiny85,DPI-8,1
+Q1,2N9304,THT,1
+D1-D11,5mm LED,THT,11
+R4-R14,68Ω Resistor,SMD-1206,11
+C1 (Optional),0.1uF Capacitor,SMD-1206,1
+BT1,2xAA Holder,THT/Wire,1

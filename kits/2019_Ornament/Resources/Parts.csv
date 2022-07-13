@@ -1,0 +1,9 @@
+PCB Reference," Part Description",Package Size," Quantity per Board"
+F1,250mA Polyfuse,THT,1
+C2,1uF Decoupling Capacitor,SMD-1206,1
+J1,5-9V Battery,THT,1
+U1,555 Timer,DIP-8,1
+R13,4.7kΩ Resistor,THT,1
+C1,100uF Capacitor,THT,1
+D1-D12,5mm LED,THT,12
+R1-R12,330Ω Resistor,SMD-1206,12

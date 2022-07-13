@@ -25,6 +25,7 @@
       <div id="mainbodydiv">
         <p class="centerp">Click on the name to direct to the project's site.</p>
         <p class="centerp">These are only the currently documented project, so more are comming in the future!</p>
+        <p class="centerp">Note that all soldering projects are in my <a href="https://kits.electro707.com">kits site!</a></p>
         <br>
         <table>
           <tr class="toprow">
@@ -38,38 +39,6 @@
           <tr>
             <td>Python Application</td>
             <td><a href="https://e7epd.readthedocs.io" >E707 Parts Database Project</a></td>
-          </tr>
-          <tr>
-            <td>Soldering Kit PCB</td>
-            <td><a href="documentation/PCB/2019_Ghost/index.php">Ghost Soldering Kit - 2019</a></td>
-          </tr>
-          <tr>
-            <td>Soldering Kit PCB</td>
-            <td><a href="documentation/PCB/2019_Pumpkin/index.php">Pumpkin Soldering Kit - 2019</a></td>
-          </tr>
-          <tr>
-            <td>Project</td>
-            <td><a href="documentation/PCB/Connect4_V1/index.php">Digital Connect 4 Rev 1</a></td>
-          </tr>
-          <tr>
-            <td>Soldering Kit PCB</td>
-            <td><a href="documentation/PCB/2019_3DChristmasTree/index.php">3D Christmas Tree - 2019</a></td>
-          </tr>
-          <tr>
-            <td>Soldering Kit PCB</td>
-            <td><a href="documentation/PCB/2019_Menorah/index.php">Menorah - 2019</a></td>
-          </tr>
-          <tr>
-            <td>Soldering Kit PCB</td>
-            <td><a href="documentation/PCB/2019_Ornament/index.php">Ornament - 2019</a></td>
-          </tr>
-          <tr>
-            <td>Python Application</td>
-            <td><a href="documentation/Software/LED_matrix_generator">LED Matrix Array Generator</a></td>
-          </tr>
-          <tr>
-            <td>Soldering Kit PCB</td>
-            <td><a href="documentation/PCB/2020_pierced_heart/index.php">Pierced Heart - 2020</a></td>
           </tr>
           <tr>
             <td>Software</td>
@@ -98,6 +67,10 @@
           <tr>
             <td>Project</td>
             <td><a href="https://github.com/Electro707/camera_remote_shutter">Remote Camera Shutter</a></td>
+          </tr>
+          <tr>
+            <td>School Project</td>
+            <td><a href="documentation/School/SeniorDesign/index.php">Senior Design Project: HF Band Characterization</a></td>
           </tr>
         </table>
       </div>

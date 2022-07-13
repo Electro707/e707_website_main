@@ -1,0 +1,1 @@
+This project is a Connect 4 game designed in a circuit board. There is a 7x6 LED matrix for the "board" of the game. Each column has a button right on top of it, simulating dropping a disk in a column. There is another LED and 2 buttons for other purposes, such as restarting the game and indicating who's turn is it. 

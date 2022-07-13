@@ -3,7 +3,7 @@
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
+        <link rel="stylesheet" type="text/css" href="index_style.css?v=1.0">
         <title>Electro707's Kit Page</title>
     </head>
     
@@ -49,5 +49,52 @@
                 <td>Not Available</td>
             </tr>
         </table>
+
+        <h3 style="text-align: center;">Archival Projects: </h3>
+        <p style="text-align: center;">These are kits that I have designed in the past, but isn't the current revision and/or abandoned</p>
+        <table id="main_table">
+            <tr class="toprow">
+                <th>Kit's Name</th>
+                <th>Documentation Page</th>
+                <th>Source Code</th>
+            </tr>
+            <tr>
+                <td>4-In-A-Row Kit V1</td>
+                <td><a href="4_in_a_row_v1">Click me for documentation!</a></td>
+                <td><a alt="Github Link" href="https://github.com/Electro707/PCB-4-In-A-Row-ARCHIVE"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td>
+            </tr>
+            <tr>
+                <td>2020 Pierced Heart</td>
+                <td><a href="2020_pierced_heart">Click me for documentation!</a></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2019 3D Christmas Tree</td>
+                <td><a href="2019_3DChristmasTree">Click me for documentation!</a></td>
+                <!-- <td><a alt="Github Link" href="https://github.com/Electro707/blinky_lights_kit"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td> -->
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2019 Ghost</td>
+                <td><a href="2019_Ghost">Click me for documentation!</a></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2019 Menorah</td>
+                <td><a href="2019_Menorah">Click me for documentation!</a></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2019 Ornament</td>
+                <td><a href="2019_Ornament">Click me for documentation!</a></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>2019 Pumpkin</td>
+                <td><a href="2019_Pumpkin">Click me for documentation!</a></td>
+                <td>-</td>
+            </tr>
+        </table>
+
     </body>
 </html>
