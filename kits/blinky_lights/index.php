@@ -17,9 +17,13 @@
         <h3>Tindie Link:</h3>
         <p>The soldering kit is available <a href="https://www.tindie.com/products/20887/">HERE!</a><p>
 
+        <h3>PCB Gerber Files</h3>
+        <p>Click on the file icon below to download the Gerber files for the PCB</p>
+        <a alt="Gerber ZIP Archive" href="Resources/BlinkingLightRev1.1.zip"><img src='../Resources/Icons/ZipFile.png' class='icon'></a>
+
         <h3>GitHub Repository</h3>
         <p>Click on the icon bellow to be directed to this kit's source code (including the instruction's SVGs, KiCad files, etc.)</p>
-        <a alt="Github Link" href="https://github.com/Electro707/blinky_lights_kit"><img src='../Resources/Icons/github.png' class='github_icon'></a>
+        <a alt="Github Link" href="https://github.com/Electro707/blinky_lights_kit"><img src='../Resources/Icons/github.png' class='icon'></a>
 
         <h3>Instructions:</h3>
         <p>Here are the different soldering instructions (Click on one to open it in a new tab):</p>
@@ -46,7 +50,20 @@
         <p>I am connecting 2 LED's cathods to each transistor with a series current limiting resistor (without the resistor, the LEDs would cease to light, maybe even release the magic smoke if you're lucky). Which 2 of the 4 LEDs that are connected to a particular transistor (and thus will blink together) is dependent on the jumper configuration. This is also why the intructions specify to make the LEDs that are blinking simoltanously the same color, as if a blue and red LED for example are connected to the same current-lmiting resistor, the blue LED will not light up but the red one will (due to the LED's different fowards voltage drop, ~2.2v for a red LED and ~3.2v for a blue LED).
 
         <h3>Custom Case</h3>
-        <p>If you have access to a 3D printer, you could print a nice enclosure for this kit (as a nice finishing touch). The design files are on GitHub, but they have NOT been tested yet. I will update this paragraph once I have printed it and tested that it fits.</p>
+        <p>If you have access to a 3D printer, you could print a nice enclosure for this kit (as a nice finishing touch). There are currently two models: A rectangular enclosure and a car enclosure. Pictures of them are coming soon!</p>
+        <p>Click on the coresponding ZIP icon below to download the STL file</p>
+        <table id='icon_and_table'>
+            <tr>
+                <th><a alt="STL ZIP Archive" href="Resources/Rectangular Enclosure STL.zip"><img src='../Resources/Icons/ZipFile.png' class='icon_no_margin'></a></th>
+                <th><a alt="Car STL ZIP Archive" href="Resources/Car Enclosure STL.zip"><img src='../Resources/Icons/ZipFile.png' class='icon_no_margin'></a></th>
+            </tr>
+            <tr>
+                <td>Rectangular STL</td>
+                <td>Car STL</td>
+            </tr>
+        </table> 
+        <p>Click on the first page of the instructions below to open the full instruction PDF for the enclosure. Currently there is only one for the car assembly</p>
+        <a alt='Car Instruction SVG' target='_blank' href='Resources/Instructions/pdf/CarAssembly.pdf'><img src='Resources/Instructions/png/CarAssemblyPage1.png' class='instructions_svg' style="max-width: 750px;"></a>
 
         <h3>Pictures:</h3>
         <p>Here are some nice images I took for the kit, which could be used as a reference while troubleshooting(Click on the image to load a high-res version of it):</p>

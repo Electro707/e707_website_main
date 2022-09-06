@@ -41,8 +41,19 @@ a{
     max-width: 1200px;
 }
 
-.github_icon{
+.icon{
     width: 50%;
     max-width: 120px;
     margin-left: 1em;
+}
+
+.icon_no_margin{
+    width: 50%;
+    max-width: 120px;
+}
+
+#icon_and_table{
+    align-items: center;
+	justify-content: center;
+    text-align: center; 
 }
