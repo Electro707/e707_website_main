@@ -69,6 +69,10 @@
             <td><a href="https://github.com/Electro707/camera_remote_shutter">Remote Camera Shutter</a></td>
           </tr>
           <tr>
+            <td>Project</td>
+            <td><a href="https://github.com/Electro707/eink_name_tag">E-Ink Name Tag</a></td>
+          </tr>
+          <tr>
             <td>School Project</td>
             <td><a href="documentation/School/SeniorDesign/index.php">Senior Design Project: HF Band Characterization</a></td>
           </tr>
