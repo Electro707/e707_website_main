@@ -25,6 +25,7 @@
         <p><span style='font-weight: bold;'>Main board Rev 1.0:</span> A hardware bug exists where if the CH340C is soldered, due to the CH340 pulling it's pin 2 high nominally, 
         it conflicts when a button is pressed (which drives the pin low). This can be either mitigated by not installing the CH340, or fixed by bending CH340's pin upwards and installing a 1k resistor between the 
         pin and the pad as shown below (image coming soon!):</p>
+        <img src='Resources/Pictures/DSC05958.jpg' class='showcase_image', style='width: 50%'>
 
         <h3>Instructions:</h3>
         <p>Here are the different soldering instructions (Click on one to open the svg in a new tab):</p>
