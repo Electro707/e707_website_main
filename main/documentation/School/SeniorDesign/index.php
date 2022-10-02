@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="cache-control" content="no-cache" />
         <meta http-equiv="Expires" content="-1" />
-        <title>Space Invaders Game</title>
+        <title>Senior Design Project: HF Band Characterization</title>
         <link rel="stylesheet" type="text/css" href="../../style.css">
         <link rel="icon" type="image/x-icon" href="https://electro707.com/Resources/webicon.ico" />
 

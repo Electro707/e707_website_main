@@ -8,13 +8,6 @@
 		<title>2019 Pumpkin PCB Soldering Kit</title>
 		<link rel="stylesheet" type="text/css" href="../style.css">	
 		<link rel="icon" type="image/x-icon" href="https://electro707.com/Resources/webicon.ico" />
-		<style>
-			.technical{
-				width: 100%;
-				max-width: 1200px;
-				background: white;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -83,12 +76,12 @@
 
 		<h3>Schematic:</h3>
 		<p>Here is the PCB's schematic:</p>
-		<img src="Resources/Schematic.svg" width="75%" alt="Schematic of Project" class="technical"/>
+		<img src="Resources/Schematic.svg" width="75%" alt="Schematic of Project" class="technical_diagrams"/>
 
 		<h3>Technical Diagrams:</h3>
 		<p>Here is some diagrams relating to the project:</p>
-		<img src="Resources/Hand Soldering Assembly.svg" width="100%" alt="Hand Soldering Assembly" class="technical"/>
-		<img src="Resources/PCB Drawing.svg" width="100%" alt="PCB Drawing" class="technical"/>
+		<img src="Resources/Hand Soldering Assembly.svg" width="100%" alt="Hand Soldering Assembly" class="technical_diagrams"/>
+		<img src="Resources/PCB Drawing.svg" width="100%" alt="PCB Drawing" class="technical_diagrams"/>
 
 		<h3>Mounting:</h3>
 		<p>The PCB is designed to be hanged from the hole at the tip of the pumpkin.</p>

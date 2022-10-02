@@ -76,6 +76,10 @@
             <td>School Project</td>
             <td><a href="documentation/School/SeniorDesign/index.php">Senior Design Project: HF Band Characterization</a></td>
           </tr>
+          <tr>
+            <td>Project</td>
+            <td><a href="https://github.com/Electro707/arcade_led_matrix_enclosure">Stacker Game Arcade</a></td>
+          </tr>
         </table>
       </div>
       <br>
