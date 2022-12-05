@@ -11,6 +11,7 @@
     <body>
         <div id="intro">
             <h1>Blinky Lights Kit</h1>
+            <h3>v1.1</h3>
             <h2>Designed by Electro707, Soldered by you!</h2>
         </div>
 

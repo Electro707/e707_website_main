@@ -47,6 +47,12 @@
                 <td><a alt="Github Link" href="https://github.com/Electro707/PCB-4-In-A-Row"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td>
                 <td>Not Available</td>
             </tr>
+            <tr>
+                <td>Touch Pumpkin Kit</td>
+                <td><a href="touch_pumpkin">Click me for documentation!</a></td>
+                <td><a alt="Github Link" href="https://github.com/Electro707/spooky_pumpkin_kit"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td>
+                <td>Not Available</td>
+            </tr>
         </table>
 
         <h3 style="text-align: center;">Archival Projects: </h3>
