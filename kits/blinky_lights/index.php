@@ -3,12 +3,13 @@
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" type="text/css" href="../style.css">
         <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
-        <script type="text/javascript" src="../Resources/jquery-3.5.1.min.js"></script>
         <title>Blinky Lights Kit</title>
     </head>
     
     <body>
+        <a alt="Home Page" href="../"><img src='../Resources/Icons/home_button.png'></a>
         <div id="intro">
             <h1>Blinky Lights Kit</h1>
             <h3>v1.1</h3>

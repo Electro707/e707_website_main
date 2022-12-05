@@ -11,6 +11,7 @@
 	</head>
 
 	<body>
+		<a alt="Home Page" href="../"><img src='../Resources/Icons/home_button.png'></a>
 		<div id="intro">
 			<h1>Scary Pumpkin Soldering Kit with Touch</h1>
 			<h3>v1.1</h3>

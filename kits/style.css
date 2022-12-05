@@ -14,7 +14,10 @@ a{
 
 #intro{
     color: black;
-    line-height: 1;
+    line-height: 1.0;
+}
+#intro>*{
+    margin: 5px 0px;
 }
 #intro > h1{
     font-size: 50px;
@@ -22,8 +25,10 @@ a{
 }
 #intro > h2{
     font-size: 32px;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
+}
+#intro > h3{
+    font-size: 28px;
 }
 
 ul{

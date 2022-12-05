@@ -28,6 +28,18 @@
                 <td><a href="https://www.tindie.com/products/20887/">Buy the kit</a></td>
             </tr>
             <tr>
+                <td>4-In-A-Row Kit</td>
+                <td><a href="4_in_a_row">Click me for documentation!</a></td>
+                <td><a alt="Github Link" href="https://github.com/Electro707/PCB-4-In-A-Row"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td>
+                <td>Not Available</td>
+            </tr>
+            <tr>
+                <td>Touch Pumpkin Kit</td>
+                <td><a href="touch_pumpkin">Click me for documentation!</a></td>
+                <td><a alt="Github Link" href="https://github.com/Electro707/spooky_pumpkin_kit"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td>
+                <td>Not Available</td>
+            </tr>
+            <tr>
                 <td>Valentines Cupid Kit V2</td>
                 <td><a href="valentines_cupid_v2">Click me for documentation!</a></td>
                 <!-- <td><a alt="Github Link" href="https://github.com/Electro707/blinky_lights_kit"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td> -->
@@ -39,18 +51,6 @@
                 <td><a href="snowflake_v2">Click me for documentation!</a></td>
                 <!-- <td><a alt="Github Link" href="https://github.com/Electro707/blinky_lights_kit"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td> -->
                 <td>Coming Soon!</td>
-                <td>Not Available</td>
-            </tr>
-            <tr>
-                <td>4-In-A-Row Kit</td>
-                <td><a href="4_in_a_row">Click me for documentation!</a></td>
-                <td><a alt="Github Link" href="https://github.com/Electro707/PCB-4-In-A-Row"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td>
-                <td>Not Available</td>
-            </tr>
-            <tr>
-                <td>Touch Pumpkin Kit</td>
-                <td><a href="touch_pumpkin">Click me for documentation!</a></td>
-                <td><a alt="Github Link" href="https://github.com/Electro707/spooky_pumpkin_kit"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td>
                 <td>Not Available</td>
             </tr>
         </table>
