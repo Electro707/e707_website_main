@@ -1,0 +1,5 @@
+<a href="../" style="margin: 0px;">
+    <div id="top_home_div">
+        <img src='../Resources/Icons/home_button.png'><p>Home</p>
+    </div>
+</a>

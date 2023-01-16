@@ -12,6 +12,20 @@ a{
   	background-color: inherit;
 }
 
+#top_home_div{
+	font-weight: bold; 
+	align-items: center; 
+	display: flex; 
+	background: #ffa343; 
+	width: fit-content; 
+	color: black;
+}
+
+#top_home_div > *{
+	padding: 5px;
+	margin: 0px;
+}
+
 #intro{
     color: black;
     line-height: 1.0;

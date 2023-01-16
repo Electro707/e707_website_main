@@ -8,7 +8,10 @@
     </head>
     
     <body>
-        <a alt="Home Page" href="../"><img src='../Resources/Icons/home_button.png'></a>
+        <?php
+            echo file_get_contents("../Resources/html_top.txt");
+        ?>
+
         <div id="intro">
             <h1>4-In-A-Row Kit</h1>
             <h3>v1.0</h3>

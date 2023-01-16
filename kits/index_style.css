@@ -43,3 +43,22 @@ tr.toprow{
 	width: 80%;
 	}
 }
+#home_link{
+    width: 100%;
+}
+
+#home_link > a{
+	font-weight: bold; 
+	align-items: center; 
+	background: #ffa343; 
+	width: fit-content; 
+	color: black;
+    display: flex;
+    text-decoration: none;
+    margin: 0 auto;
+}
+
+#home_link > a > *{
+	padding: 5px;
+	margin: 0px;
+}

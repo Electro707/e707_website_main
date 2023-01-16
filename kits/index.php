@@ -8,6 +8,18 @@
     </head>
     
     <body>
+        <!-- <div style="position: flex; width: fit-content; height: fit-content; font-weight: bold; background: #ffa343; "> -->
+            <!-- <a href="https://www.electro707.com" style="color: black; text-decoration: none; background: #ffa343;">Back to main site!</a> -->
+        <!-- </div> -->
+
+        <div id="home_link">
+        <a href="https://www.electro707.com">
+            <!-- <div> -->
+                <img src='Resources/Icons/home_button.png'><p>Back to main site</p>
+            <!-- </div> -->
+        </a>
+        </div>
+
         <div id="intro">
             <h1>Electro707's Kits Main Page</h1>
             <p>Welcome to my kits webite, where I showcase all of the kits currently/previously sellable on my Tindie account, as well as direct you to each's documentation page</p>
