@@ -4,6 +4,5 @@
 <li class="navbar"><a href="/projects">Projects</a></li>
 <li class="navbar"><a href="https://kits.electro707.com">Kits</a></li>
 <li class="navbar"><a href="https://blogs.electro707.com">Blogs</a></li>
-<li class="navbar"><a href="/tools">Online Tools</a></li>
 <li class="navbar"><a href="/about">About me</a></li>
 </ul>
