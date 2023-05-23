@@ -3,6 +3,7 @@
 <li class="navbar"><a href="/">Home</a></li>
 <li class="navbar"><a href="/projects">Projects</a></li>
 <li class="navbar"><a href="https://kits.electro707.com">Kits</a></li>
+<li class="navbar"><a href="https://photo.electro707.com">Photography</a></li>
 <li class="navbar"><a href="https://blogs.electro707.com">Blogs</a></li>
 <li class="navbar"><a href="/about">About me</a></li>
 </ul>
