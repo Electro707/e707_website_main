@@ -1,3 +1,3 @@
-I am Jamal Bouajjaj, a graduate student at the University of New Haven. I take enjoyment in designing circuits and PCBs as well programming embedded systems.
+I am Jamal Bouajjaj, an M.S and B.S Electrical Engineer. I take enjoyment in designing circuits and PCBs as well programming embedded systems.
 I have developed countless projects (most of them needing a documentation), ranging from your basic Arduino example project to designing my own E-Ink name tag.
 This website serves as a showcase of all of my projects that has been documented so far, as well as my kits and my blog that I run.

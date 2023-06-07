@@ -23,8 +23,9 @@
         <p>The soldering kit is available <a href="https://www.tindie.com/products/20887/">HERE!</a><p>
 
         <h3>PCB Gerber Files</h3>
-        <p>Click on the file icon below to download the Gerber files for the PCB</p>
-        <a alt="Gerber ZIP Archive" href="Resources/BlinkingLightRev1.1.zip"><img src='../Resources/Icons/ZipFile.png' class='icon'></a>
+        <p>The Gerber file can be found on GitHub as a Release:</p>
+        <a alt="GitHub Release Page" href="https://github.com/Electro707/blinky_lights_kit/releases/"><img src='../Resources/Icons/ZipFile.png' class='icon'></a>
+        <p><span style='font-weight: bold; color:#F00;'>NOTE:</span> The latest Gerber, and thus the design, includes a JLCJLCJLCJLC silkscreen label. This is used by me when ordering from JLCPCB (no endorsement nor recommendation, just what I use). If you are to use a different manufacturer, I recommend you change or remove this label in the KiCAD file.</p>
 
         <h3>GitHub Repository</h3>
         <p>Click on the icon bellow to be directed to this kit's source code (including the instruction's SVGs, KiCad files, etc.)</p>
