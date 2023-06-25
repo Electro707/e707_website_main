@@ -80,6 +80,10 @@
             <td>Project</td>
             <td><a href="https://github.com/Electro707/arcade_led_matrix_enclosure">Stacker Game Arcade</a></td>
           </tr>
+          <tr>
+            <td>Project</td>
+            <td><a href="https://github.com/Electro707/addressable_led_controller">Addressable LED Strip Controller</a></td>
+          </tr>
         </table>
       </div>
       <br>
