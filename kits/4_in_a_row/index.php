@@ -18,6 +18,8 @@
             <h2>Designed by Electro707, Soldered by you!</h2>
         </div>
 
+        <a alt='Image' href='Resources/Pictures/high_res/DSC05956.jpg'><img class='showcase_img' style="width: 50%; max-width: 600px;" src='Resources/Pictures/low_res/DSC05956.jpg'></a>
+
         <h3>Tindie Link:</h3>
         <p>Not available yet!<p>
 
