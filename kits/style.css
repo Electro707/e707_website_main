@@ -102,3 +102,9 @@ th, td {
 	max-width: 1200px;
 	background: white;
 }
+
+.icon{
+    width: 50%;
+    max-width: 120px;
+    margin-left: 1em;
+}
