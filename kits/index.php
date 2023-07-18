@@ -43,7 +43,7 @@
                 <td>4-In-A-Row Kit</td>
                 <td><a href="4_in_a_row">Click me for documentation!</a></td>
                 <td><a alt="Github Link" href="https://github.com/Electro707/PCB-4-In-A-Row"><img src="Resources/Icons/github.png" alt="GitHub Link" style="height:2em"></a></td>
-                <td>Not Available</td>
+                <td><a href="https://www.tindie.com/products/28121/">Buy the kit</a></td>
             </tr>
             <tr>
                 <td>Touch Pumpkin Kit</td>
