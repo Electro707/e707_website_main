@@ -4,8 +4,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" type="text/css" href="../style.css">
-        <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
         <title>Blinky Lights Kit</title>
+        <style>
+            #icon_and_table{
+                align-items: center;
+                justify-content: center;
+                text-align: center; 
+            }
+        </style>
     </head>
     
     <body>
@@ -40,14 +46,14 @@
                 $filename = fgets($fh);
                 $filename = rtrim($filename, "\r\n");
                 if($filename == ""){continue;}
-                echo "<a alt='Instruction SVG' target='_blank' href='Resources/Instructions/pdf/".$filename .".pdf'><img src='Resources/Instructions/png/".$filename.".png' class='instructions_svg'></a>";
+                echo "<a alt='Instruction SVG' target='_blank' href='Resources/Instructions/pdf/".$filename .".pdf'><img src='Resources/Instructions/png/".$filename.".png' class='technical_diagrams'></a>";
             }
             fclose($fh);
         ?>
 
         <h3>Schematic:</h3>
-        <!-- <img src='Resources/Schematic.svg' class='instructions_svg'> -->
-        <a alt='Schematic SVG' target='_blank' href="Resources/Schematic.pdf"><img src='Resources/Schematic.svg' class='instructions_svg'></a>"
+        <!-- <img src='Resources/Schematic.svg' class='technical_diagrams'> -->
+        <a alt='Schematic SVG' target='_blank' href="Resources/Schematic.pdf"><img src='Resources/Schematic.svg' class='technical_diagrams'></a>
 
         <h3>Theory of Operations:</h3>
         <p>This circuit is based off of a jellybean transistor astable multivibrator circuit. I recomment you check out the following explanations to lean about how it works (a better explanation than what I could come up with)<p>
@@ -60,8 +66,8 @@
         <p>Click on the coresponding ZIP icon below to download the STL file</p>
         <table id='icon_and_table'>
             <tr>
-                <th><a alt="STL ZIP Archive" href="Resources/Rectangular Enclosure STL.zip"><img src='../Resources/Icons/ZipFile.png' class='icon_no_margin'></a></th>
-                <th><a alt="Car STL ZIP Archive" href="Resources/Car Enclosure STL.zip"><img src='../Resources/Icons/ZipFile.png' class='icon_no_margin'></a></th>
+                <th><a alt="STL ZIP Archive" href="Resources/Rectangular Enclosure STL.zip"><img src='../Resources/Icons/ZipFile.png' class='icon'></a></th>
+                <th><a alt="Car STL ZIP Archive" href="Resources/Car Enclosure STL.zip"><img src='../Resources/Icons/ZipFile.png' class='icon'></a></th>
             </tr>
             <tr>
                 <td>Rectangular STL</td>
@@ -69,13 +75,13 @@
             </tr>
         </table> 
         <p>Click on the first page of the instructions below to open the full instruction PDF for the enclosure. Currently there is only one for the car assembly</p>
-        <a alt='Car Instruction SVG' target='_blank' href='Resources/Instructions/pdf/CarAssembly.pdf'><img src='Resources/Instructions/png/CarAssemblyPage1.png' class='instructions_svg' style="max-width: 750px;"></a>
+        <a alt='Car Instruction SVG' target='_blank' href='Resources/Instructions/pdf/CarAssembly.pdf'><img src='Resources/Instructions/png/CarAssemblyPage1.png' class='technical_diagrams' style="max-width: 750px;"></a>
 
         <h3>Pictures:</h3>
         <p>Here are some nice images I took for the kit, which could be used as a reference while troubleshooting(Click on the image to load a high-res version of it):</p>
         <?php
         foreach (glob('Resources/Pictures/low_res/*.jpg') as $filename) {
-            echo "<a alt='Image' href='Resources/Pictures/high_res/". basename($filename) ."'><img class='showcase_img' src='" . $filename . "'></a>";
+            echo "<a alt='Image' href='Resources/Pictures/high_res/". basename($filename) ."'><img class='showcase_image' src='" . $filename . "'></a>";
         }
         ?>
 

@@ -43,7 +43,7 @@
         
         <a alt='Instruction SVG' target='_blank' href='Resources/Instructions/Soldering Instructions.svg'><img src='Resources/Instructions/Soldering Instructions.png' class='technical_diagrams'></a>
         <!-- smaller width for the LED instruction as it isn't that big-->
-        <a alt='Instruction SVG' target='_blank' href='Resources/Instructions/LED_Instructions.svg'><img src='Resources/Instructions/LED_Instructions.png' class='technical_diagrams' style='width: 50%;'></a>
+        <a alt='Instruction SVG' target='_blank' href='Resources/Instructions/LED_Instructions.svg'><img src='Resources/Instructions/LED_Instructions.png' class='technical_diagrams' style='max-width: 600px;'></a>
 
         <h3>Schematic:</h3>
         <p>Here are the schematics for the 2 boards. Click on one for a PDF version in a new tab</p>
@@ -54,7 +54,7 @@
         <p>Here are some nice images I took for the kit, which could be used as a reference while troubleshooting(Click on the image to load a high-res version of it):</p>
         <?php
         foreach (glob('Resources/Pictures/low_res/*.jpg') as $filename) {
-            echo "<a alt='Image' href='Resources/Pictures/high_res/". basename($filename) ."'><img class='showcase_img' src='" . $filename . "'></a>";
+            echo "<a alt='Image' href='Resources/Pictures/high_res/". basename($filename) ."'><img class='showcase_image' src='" . $filename . "'></a>";
         }
         ?>
 
