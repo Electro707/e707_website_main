@@ -8,7 +8,6 @@
       fclose($file);
     ?>
     <link rel="stylesheet" type="text/css" href="css/index.css?v=1.2">
-    <link href="Resources/lightbox.css?v=1" type="text/css" rel="stylesheet" />
 
     <title>Jamal Bouajjaj</title>
   </head>

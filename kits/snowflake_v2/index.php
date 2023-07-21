@@ -2,8 +2,7 @@
     <head>
         <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
+        <link rel="stylesheet" type="text/css" href="../style.css">	
         <title>Snowflake V2</title>
     </head>
     
@@ -27,14 +26,14 @@
                 $filename = fgets($fh);
                 $filename = rtrim($filename, "\r\n");
                 if($filename == ""){continue;}
-                echo "<a alt='Instruction SVG' target='_blank' href='Resources/Instructions/pdf/".$filename .".pdf'><img src='Resources/Instructions/png/".$filename.".png' class='instructions_svg'></a>";
+                echo "<a alt='Instruction SVG' target='_blank' href='Resources/Instructions/pdf/".$filename .".pdf'><img src='Resources/Instructions/png/".$filename.".png' class='technical_diagrams'></a>";
             }
             fclose($fh);
         ?>
 
         <h3>Schematic:</h3>
-        <!-- <img src='Resources/Schematic.svg' class='instructions_svg'> -->
-        <a alt='Schematic SVG' target='_blank' href="Resources/Schematic.pdf"><img src='Resources/Schematic.svg' class='instructions_svg'></a>"
+        <!-- <img src='Resources/Schematic.svg' class='technical_diagrams'> -->
+        <a alt='Schematic SVG' target='_blank' href="Resources/Schematic.pdf"><img src='Resources/Schematic.svg' class='technical_diagrams'></a>"
 
 
         <h3>Pictures:</h3>
