@@ -50,6 +50,8 @@ ul{
 }
 p{
     font-size: 20px;
+    word-wrap: break-word;
+    width: 1000px;
 }
 h3{
     font-size: 28px;
