@@ -50,7 +50,6 @@
         <div id="SocialMedia">
           <a href="https://www.linkedin.com/in/jamal-bouajjaj-93755514a/" target="_blank" style="grid-column: 2; grid-row: 1"><img alt="Linkedin Profile Link" src="Resources/Icons/linkedin.png"></a>
           <a href="https://github.com/Electro707" target="_blank" style="grid-column: 3; grid-row: 1"><img alt="GitHub Profile Link" src="Resources/Icons/github.png"></a>
-          <a href="https://www.instagram.com/electro707/" target="_blank" style="grid-column: 4; grid-row: 1"><img alt="GitHub Profile Link" src="Resources/Icons/instagram.png"></a>
           <a href="https://gitlab.com/Electro707" target="_blank" style="grid-column: 5; grid-row: 1"><img alt="GitLab Profile Link" src="Resources/Icons/gitlab.png"></a>
         </div>
         
