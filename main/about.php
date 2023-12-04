@@ -40,8 +40,6 @@
         <div id="ResumeStuff">
           <a href="Resources/Resume_Stuff/Resume.pdf" target="_blank" style="grid-column: 2; grid-row: 1"><img alt="Resume" src="Resources/Icons/pdf.png"></a>
           <p style="grid-column: 2; grid-row: 2">Resume</p>
-          <a href="Resources/Resume_Stuff/Projects.pdf" target="_blank" style="grid-column: 3; grid-row: 1"><img alt="Projects List" src="Resources/Icons/pdf.png"></a>
-          <p style="grid-column: 3; grid-row: 2">Projects List</p>
         </div>
         
         <p class="description" style="margin-top: 10px; margin-bottom: 5px;">

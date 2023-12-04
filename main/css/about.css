@@ -25,7 +25,7 @@
   margin: auto;
   display: grid;
   justify-items: center;
-  grid-template-columns: auto 120px 120px auto;
+  grid-template-columns: auto 120px auto;
   margin-top: 25px;
 }
 #ResumeStuff> a > img{
