@@ -25,8 +25,10 @@
         <p class="description" style="margin-top: 50px;">
           <?php
           $file = fopen("Resources/about_me_text.txt", "r");
-          echo file_get_contents("Resources/about_me_text.txt");
+          $stuff = file_get_contents("Resources/about_me_text.txt");
           fclose($file);
+          $stuff = str_replace("\n\n", "<br>", $stuff);
+          echo $stuff
           ?>
         </p>
         
@@ -43,7 +45,7 @@
         </div>
         
         <p class="description" style="margin-top: 10px; margin-bottom: 5px;">
-          Here are links to some of my social media:
+          Here are links to some of my socials:
         </p>
         <div id="SocialMedia">
           <a href="https://www.linkedin.com/in/jamal-bouajjaj-93755514a/" target="_blank" style="grid-column: 2; grid-row: 1"><img alt="Linkedin Profile Link" src="Resources/Icons/linkedin.png"></a>
@@ -56,13 +58,6 @@
         </p>
         <div class="SingleImage">
           <a href="Resources/Other_PDF/main_gpg.asc" target="_blank" style="grid-column: 2; grid-row: 1"><img alt="Cool Vaccine" src="Resources/Icons/gpg.png"></a>
-        </div>
-        
-        <p class="description" style="margin-top: 100px;">
-          Also, please get vaccinated (Covid-19). Here is my own vaccination card:
-        </p>
-        <div class="SingleImage">
-          <a href="Resources/Other_PDF/CovidVaccine.pdf" target="_blank" style="grid-column: 2; grid-row: 1"><img alt="Cool Vaccine" src="Resources/Icons/Vaccine.png"></a>
         </div>
       </div>
     </div>
