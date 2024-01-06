@@ -1,0 +1,22 @@
+#step_step{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.figure{
+	max-width: 500px;
+}
+
+.figure > img{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.figure-caption{
+    font-size: 22px;
+    text-align: center;
+    padding: 2px;
+    margin: auto;
+}

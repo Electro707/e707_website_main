@@ -4,26 +4,27 @@ body{
 	background-color: #81d4fa;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-	line-height: 1.2em;
+	line-height: 1.15;
 }
 a{
-	color: blue;
+	color: rgb(0, 0, 180);
 	text-decoration: inherit;
   	background-color: inherit;
 }
 
 #top_home_div{
-	font-weight: bold; 
 	align-items: center; 
 	display: flex; 
 	background: #ffa343; 
-	width: fit-content; 
-	color: black;
+	width: 100%;
 }
 
 #top_home_div > *{
 	padding: 5px;
 	margin: 0px;
+	font-weight: bold; 
+	color: black;
+	font-size: 20px;
 }
 
 #intro{
@@ -51,7 +52,7 @@ ul{
 p{
     font-size: 20px;
     word-wrap: break-word;
-    width: 1000px;
+    max-width: 1000px;
 }
 h3{
     font-size: 28px;
@@ -59,12 +60,15 @@ h3{
 h4{
 	font-weight: bold;
 }
-a{
-    color: darkblue;
-}
 
 #warning{
 	color:#F00;
+	line-height: 0.0;
+}
+
+.note_prefix{
+	color:rgb(120, 80, 0);
+	font-weight: bold;
 }
 
 table{
