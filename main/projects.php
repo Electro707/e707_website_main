@@ -84,6 +84,14 @@
             <td>Project</td>
             <td><a href="https://github.com/Electro707/addressable_led_controller">Addressable LED Strip Controller</a></td>
           </tr>
+          <tr>
+            <td>Project</td>
+            <td><a href="https://github.com/UNewHaven-CIT/ectf-2024-devboard">MITRE eCTF Custom Daughter Board</a></td>
+          </tr>
+          <tr>
+            <td>Teaching</td>
+            <td><a href="documentation/School/2023_CSIxx51_Slides">Into To Python Slides</a></td>
+          </tr>
         </table>
       </div>
       <br>
