@@ -7,6 +7,8 @@
  */
 $base-font-family:     'Source Code Pro', monospace !default;
 $base-font-size:       16px !default;
+$h1-font-size:         22px !default;
+$h2-font-size:         18px !default;
 $mobile-font-size:     12px !default;
 $base-line-height:     1.5 !default;
 $container-width:      90% !default;
@@ -16,8 +18,10 @@ $container-max-width:  1000px !default;
  * Global
  */
 body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
-h1, h2, h3, h4, h5, h6 { font-size: $base-font-size;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
-p, ul, ol { margin: 0px;  color: var(--text-color); }
+h1 { font-size: $h1-font-size;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
+h2 { font-size: $h2-font-size;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
+h3, h4, h5, h6 { font-size: $base-font-size;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
+p, ul, ol { margin: 0px;  color: var(--text-color); margin-bottom: $base-line-height+em; }
 a { text-decoration: underline;  color: var(--link-color); }
 a:hover { color: var(--background-color); background-color: var(--base-color); }
 @media only screen and (max-device-width: 500px) { * { font-size: $mobile-font-size !important; } }
@@ -65,8 +69,10 @@ figure {
 /**
  * Header/Navigation
  */
-.menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: 25px; 
+.menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: 25px;
     display: flex; align-items: center; flex-wrap: nowrap; justify-content: space-between;}
+.menu .txt {text-decoration: none;  color: var(--text-color);}
+.menu .txt:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 .menu ul { margin-top: 5px;  margin-bottom: 5px;  padding-left: 0px;  list-style-type: none;  text-align: right; }
 .menu ul li { display: inline;  margin-left: 10px; }
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
@@ -86,12 +92,15 @@ input[type=submit]:hover { color: var(--background-color); background-color: var
 *:focus { outline: none; }
 textarea { vertical-align: top; }
 
+// Any plain text code that is in-line
+.language-plaintext { color: var(--code-color-18); font-style: italic }
+
 /**
  * Code and syntax highlighting
  */
 .lineno { color: var(--code-color-1); margin-right: 15px; }
 figure.highlight { margin: 5px 0; }
-pre { background-color: var(--background-color);  border: none;  padding: 0;  margin: 0;  overflow:auto;  font-size: $base-font-size;  color: var(--text-color);  line-height: 1.7 !important;  font-family: $base-font-family !important; }
+pre { background-color: var(--background-color);  border: none;  padding: 0;  margin: 0; margin-bottom: $base-line-height+em;  overflow:auto;  font-size: $base-font-size;  color: var(--text-color);  line-height: 1.7 !important;  font-family: $base-font-family !important; }
 .highlight .hll { background-color: var(--code-color-2); }
 .highlight .c { color: var(--code-color-1); font-style: italic } /* Comment */
 .highlight .err { color: var(--code-color-3); background-color: var(--code-color-4); } /* Error */

@@ -154,6 +154,10 @@ That is all I have for now, next post I will be going into the Arduino firmware 
 
 For now, cheers, and thanks for all the fish!
 
+# Post-Edit
+
+[Part 2 is now up]({{site.url}}/electronics/2024/06/24/Arduino-Composite-Video-Part2.html)
+
 
 # Sources, References, and Good Resources
 1. Image of composite cable: https://en.wikipedia.org/wiki/File:Composite-video-cable.jpg
