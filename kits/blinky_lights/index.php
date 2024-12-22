@@ -61,7 +61,8 @@
         <p>I am connecting 2 LED's cathods to each transistor with a series current limiting resistor (without the resistor, the LEDs would cease to light, maybe even release the magic smoke if you're lucky). Which 2 of the 4 LEDs that are connected to a particular transistor (and thus will blink together) is dependent on the jumper configuration. This is also why the intructions specify to make the LEDs that are blinking simoltanously the same color, as if a blue and red LED for example are connected to the same current-lmiting resistor, the blue LED will not light up but the red one will (due to the LED's different fowards voltage drop, ~2.2v for a red LED and ~3.2v for a blue LED).
 
         <h3>Custom Case</h3>
-        <p>If you have access to a 3D printer, you could print a nice enclosure for this kit (as a nice finishing touch). There are currently two models: A rectangular enclosure and a car enclosure. Pictures of them are coming soon!</p>
+        <p>If you have access to a 3D printer, you could print a nice enclosure for this kit (as a nice finishing touch). There are currently two models: A rectangular enclosure and a car enclosure.</p>
+        <img class='showcase_image' style='width: 30%' src='Resources/Pictures/case_anim1.gif'>
         <p>Click on the coresponding ZIP icon below to download the STL file</p>
         <table id='icon_and_table'>
             <tr>
