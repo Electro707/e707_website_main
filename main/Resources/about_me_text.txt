@@ -10,7 +10,7 @@ This website itself is one of my projects, programmed purely in html, css, and p
 This website also showcases soldering kits that I have developed on their own page.
 
 Photography is also one of my hobbies.
-My current gear is a Sony A7II with a 50mm F1.7 primary, a Tamron 28-200mm, an Laowa 100mm macro, and a 14mm manual wide lens.
+My current gear is a Sony A7II with a 50mm F1.7 primary, a Tamron 28-200mm, a Tamron 150-500mm, an Laowa 100mm macro, and a 14mm manual wide lens.
 I use Darktable to edit all of my photos.
 My photography page showcases some pictures that I have taken.
 

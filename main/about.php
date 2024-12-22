@@ -37,7 +37,7 @@
         </p>
         
         <p class="description" style="margin-top: 50px; margin-bottom: 5px;">
-          I have a public resume and projects list available below:
+          I have a public resume available below:
         </p>
         <div id="ResumeStuff">
           <a href="Resources/Resume_Stuff/Resume.pdf" target="_blank" style="grid-column: 2; grid-row: 1"><img alt="Resume" src="Resources/Icons/pdf.png"></a>
