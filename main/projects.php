@@ -25,12 +25,12 @@
       <div id="mainbodydiv">
         <p class="centerp">Click on the name to direct to the project's site.</p>
         <p class="centerp">These are only the currently documented project, so more are comming in the future!</p>
-        <p class="centerp">Note that all soldering projects are in my <a href="https://kits.electro707.com">kits site!</a></p>
+        <p class="centerp">Note that all soldering projects are in <a style='text-decoration: underline;' href="https://kits.electro707.com">my kits site!</a></p>
         <br>
         <table>
           <tr class="toprow">
             <td style="width: 30%;">Type</td>
-            <td>Name + Link</td>
+            <td>Name + Link (click on project)</td>
           </tr>
           <tr>
             <td>Library</td>
@@ -91,6 +91,18 @@
           <tr>
             <td>Teaching</td>
             <td><a href="documentation/School/2023_CSIxx51_Slides">Into To Python Slides</a></td>
+          </tr>
+          <tr>
+            <td>Project</td>
+            <td><a href="https://github.com/Electro707/iv_8_vfd_driver">2x IV-8 VFD Tube Driver</a></td>
+          </tr>
+          <tr>
+            <td>Project</td>
+            <td><a href="https://github.com/Electro707/OSLB56317_Driver">OSLB56317 16x16 LED Matrix Driver</a></td>
+          </tr>
+          <tr>
+            <td>Project</td>
+            <td><a href="https://github.com/Electro707/AD121F2_Driver">ADF121F2 Driver</a></td>
           </tr>
         </table>
       </div>
