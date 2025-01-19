@@ -35,7 +35,7 @@
 
 		<h3>GitHub Repository:</h3>
 		<p>Click in the icon below to direct you to the Github repository, where you can download the library from:</p>
-		<a href="https://github.com/Electro707/LED_Matrix_Generator"><img src="https://www.electro707.com/Resources/GitHub_Logo.png"\
+		<a href="https://github.com/Electro707/LED_Matrix_Generator"><img src="https://www.electro707.com/Resources/Icons/github_full.png"\
 				 alt="GitHub Repository Link" width="15%"></a>
 
 

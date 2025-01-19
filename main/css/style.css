@@ -1,8 +1,8 @@
 @import url('/_fonts/quicksand_font.css');
 
-*{
-	transition: 0.5s;
-}
+/* *{ */
+	/* transition: 0.5s; */
+/* } */
 html, body {
 	background-color: #ffffff;
 	height: 100%;
@@ -54,6 +54,7 @@ li.navbar > a{
 }
 ul.navbar{
 	display:flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	list-style-type: none;

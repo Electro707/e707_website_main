@@ -39,7 +39,7 @@
 
 		<h3>GitHub Repository:</h3>
 		<p>Click in the icon below to direct you to the Github repository, where you can download the library from:</p>
-		<a href="https://github.com/Electro707/stm32_ssd1351_video_audio_player"><img src="https://www.electro707.com/Resources/GitHub_Logo.png"\
+		<a href="https://github.com/Electro707/stm32_ssd1351_video_audio_player"><img src="https://www.electro707.com/Resources/Icons/github_full.png"\
 				 alt="GitHub Repository Link" width="250em"></a>
 
 		<h3>Build Materials:</h3>
