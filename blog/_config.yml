@@ -52,11 +52,12 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-footer: <p>Jamal Bouajjaj. 2025. <a href="https://github.com/Electro707/e707_website_main" alt="Website's source code">AGPL3.0</a></p>
+footerText: <p>Jamal Bouajjaj. 2025. <a href="https://github.com/Electro707/e707_website_main" alt="Website's source code">AGPL3.0</a></p>
 
 # Jekyll Console specific 
 header_pages:
   - index.md
+  # - info/EmbeddedCTips.md
   - about.md
 
 style: dark

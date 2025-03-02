@@ -31,10 +31,31 @@ a:hover { color: var(--background-color); background-color: var(--base-color); }
  */
 .container { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; }
 p { word-wrap: break-word;  word-break: break-word;  white-space: pre-wrap; }
-footer { color: var(--text-color);  border-top: var(--border);  margin: 20px auto 15px;  padding-top: 10px;  text-align: right; }
+
 header { margin-top: 25px;  margin-bottom: 10px; }
 header p { text-align: left;  margin: 0; }
-footer { margin-bottom: 20px; }
+
+footer {
+  color: var(--text-color);
+  border-top: var(--border);
+  margin: 20px auto 15px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-flow: row nowrap;
+}
+footer p {margin-bottom: 0px;}
+// revert back hover attribute
+footer a.ftNoHl:hover {
+  background-color: var(--background-color);
+  color: var(--base-color);
+}
+footer a.ftNoHl > img {
+  height: 24px;
+}
 
 /**
  * Image
@@ -74,7 +95,7 @@ figure {
 .menu .txt {text-decoration: none;  color: var(--text-color);}
 .menu .txt:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 .menu ul { margin-top: 5px;  margin-bottom: 5px;  padding-left: 0px;  list-style-type: none;  text-align: right; }
-.menu ul li { display: inline;  margin-left: 10px; }
+.menu ul li { display: inline;  padding-right: 10px; padding-left: 10px; border-right: dashed 1px;}
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
 .menu ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 

@@ -15,3 +15,5 @@ If you are do inclined, also check out my other socials here:
 
 [Github](https://github.com/Electro707)
 [Twitter](https://twitter.com/electro_707)
+
+You can also subscribe to this blog through [this blog's RSS feed]({{site.url}}/feed.xml)
