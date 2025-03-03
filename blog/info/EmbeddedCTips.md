@@ -54,7 +54,7 @@ My reasoning is as follows:
 - In some uses of variables, you purposefully want to overflow, like for an 8-bit checksum
 - You know the architecture you are working with, so you can easily know to use uint8_t for AVR systems or uint32_t for ARM systems when possible for non-critical variables (like in a for loop)
 - It is more readable to know what variable size you are working with explicitly.
-- On some architectures, `int` isn't the ideal CPU bit size to allow for a wide programming compatibility.
+- On some architectures, `int` isn't the ideal CPU bit size to allow for a wider programming compatibility (most wouldn't expect an `int` for example to be only 8-bits)
 
 ## uint8_t vs int in AVR
 
