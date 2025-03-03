@@ -1,7 +1,8 @@
 ---
 layout: page
-title:  "Embedded C Tips"
+title:  "Embedded Tips"
 categories: programming
+date: 2025-03-03
 --- 
 
 <style type="text/css">
@@ -27,6 +28,7 @@ categories: programming
     }
 </style>
 
+> Updated on {{page.date}}
 
 This page represents some general info, tips and tricks, and other knowledge I have gain over the years specifically in developing embedded system firmware.
 
@@ -37,9 +39,29 @@ This page will be very opinionated (it is my site after all). Be warned!
 
 ---
 Table of Contents:
+<!-- todo: look into having only # header, or have a hierarchy -->
 * Do not remove this line (it will not be displayed)
 {:toc}
 ---
+
+# Don't pre-optimize, but be cautious
+
+The general programming tip of "Don't pre-optimize" is also applicable to embedded systems.
+
+If you aren't familiar, a good practice is when you are developing a piece of software (firmware or PC software), don't spent a lot of time optimizing code without it being necessary.
+For example if you are software floating math, don't try to convert it to fixed point (more on that [here](#floatingPoint)) until the math is too slow for your application
+
+BUT, you should try to use good design programming paradigms in your code, which is both good practice and can make your code run better.
+You should also be somewhat weary of what can be an obvious bottleneck, so that if your firmware needs to be optimized you know what to work on first.
+
+# Learn the instruction set
+
+When you are dealing with a new CPU architecture, especially for a larger/professional project, I would have a quick glance at the instruction set.
+
+While for the most part you will let the compiler handle things, you might have a project that directly can be solved by 1 or a couple of instructions.
+For example if you are dealing with a ARM Cortex M0 processor, to reverse bits of a word, you *can* do a C implementation, or you can use the built-in `REV` instruction.
+
+It will also give you a better idea of what the processor is capable of, and you will be better positioned if you *have* to optimize things in assembly due to constraints.
 
 # Fixed Variable Size
 
@@ -87,12 +109,13 @@ void doLoop(char *text, uint8_t n){
 </tr>
 </table>
 
-# Avoid floats if no FPU (architecture dependent)
+# Try to avoid floats if unnecessary, and no FPU {#floatingPoint}
 
 *Generally*, low-end microcontroller doesn't come with a FPU (floating point unit) with it's CPU.
 The FPU is a hardware block that assists in doing floating point (think decimal/fractional numbers) math.
 Without this FPU, the toolchain will include software floating point, which is ***painfully slow***, at least compared to integer arithmetic.
 
+If you don't need floating point, I would just avoid them in cases where it's easy to use decimal arithmetic.
 With that said, if your application is not bottle necked with software floating point, by all means use those. Remember, don't pre-optimize until needed.
 
 With that said, if you need to apply fractional math, and software floating point is too slow for your application, you can always use fixed point math. I will leave [the Wikipedia article](https://en.wikipedia.org/wiki/Fixed-point_arithmetic) on it if you want to do further reading.
@@ -192,3 +215,38 @@ void doLoop(char *text, uint8_t n){
 ```
 
 This is useful if the contents of `text` only needs to be used once, otherwise you loose the original pointer location, making this trick a bit mute.
+
+# for(Ever) (main loop)
+
+The following is a cool way of defining your main loop.
+While it can be used for any `while(1)` loop, I reserve it only for the main loop.
+
+```c
+#define EVER    ;;
+
+int main(void){
+    // init stuff
+    for(EVER){
+        // main stuff
+    }
+}
+
+```
+
+# Modulus of 2^n
+
+If you are applying a modulus (`%`, which is a division remainder operation) of a power of two as the divisor, for example to limit a buffer size, you can instead AND the dividend by 1 minus the divisor, for example:
+```c
+buff[idx++] = r;        // some operation
+// the following two are equivalent
+idx %= 64;
+idx &= 0x3f;    // 63
+```
+
+This works because we are dealing with a binary system, a modulus of a power of two inherently limits the number of bits (a modulus of 64 would limit the result to 0 to 63, 0 to 0b111111), which is binary-equivalent of ANDing by the maximum 0b111111, as the rest of the bits will be zero.
+
+If the divisor is part of the design you construct, for example a buffer size you define, I would limit it to power of twos for this reason.
+
+Why do this?
+Well a modulus, if the compiler did not optimize for it (which it should if the divisor is a constant), will be an expensive division operation. Many low-end processors don't come with a division instruction, so you are spending time doing software division. Even if the processor comes with hardware division, it may take a couple or more instruction cycles to complete.
+Compare that to the AND operation, which is common for all processors, and tends to take only a single instruction cycle.
