@@ -1,0 +1,194 @@
+---
+layout: page
+title:  "Embedded C Tips"
+categories: programming
+--- 
+
+<style type="text/css">
+    .codeGrid {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+    .codeGrid td{
+        border: 1px dashed;
+    }
+    .codeGrid td{
+        vertical-align: top;
+        width: 120px;
+    }
+    .codeGrid figure {
+        overflow-x: scroll;
+        text-align: left;
+        white-space: nowrap;
+    }
+    .codeGrid figure pre {
+        font-size: 12px;
+    }
+</style>
+
+
+This page represents some general info, tips and tricks, and other knowledge I have gain over the years specifically in developing embedded system firmware.
+
+By embedded systems I refer to microcontrollers, think Attinys and PICs.
+I will not be covering any "high level" embedded systems like a Raspberry PI system, as I think of those as closer to a general computer when developing firmware/software.
+
+This page will be very opinionated (it is my site after all). Be warned!
+
+---
+Table of Contents:
+* Do not remove this line (it will not be displayed)
+{:toc}
+---
+
+# Fixed Variable Size
+
+We all know the C types `int`, `byte`, etc.
+
+I try not to use the pre-defined C types in my firmware.
+I instead use fixed width types like `uint8_t`, `int32_t`, etc for the most part.
+
+My reasoning is as follows:
+- You cannot trust C type length types across different architectures.
+  For example, in an STM32 processor `int` is 32-bits, while in AVR it is 16-bits.
+- In some uses of variables, you purposefully want to overflow, like for an 8-bit checksum
+- You know the architecture you are working with, so you can easily know to use uint8_t for AVR systems or uint32_t for ARM systems when possible for non-critical variables (like in a for loop)
+- It is more readable to know what variable size you are working with explicitly.
+- On some architectures, `int` isn't the ideal CPU bit size to allow for a wide programming compatibility.
+
+## uint8_t vs int in AVR
+
+To see the danger of the last point, the following two assemblies are of these two same function, but one with i set to `uint8_t`, the other to `int`. Both are compiled with `-Ofast`.
+```c
+void doLoop(char *text, uint8_t n){
+    for(int i=0;i<n;i++){
+        doSomething();
+    }
+}
+```
+
+<table class="codeGrid">
+<tr>
+    <td>uint8_t</td>
+    <td>int</td>
+</tr>
+
+<tr>
+    <td>
+    {% highlight nasm %}
+    {% include_relative EmbeddedCTips/varSize/avr_dump_for_uint8_t.asm %}
+    {% endhighlight %}
+    </td>
+    <td>
+    {% highlight nasm %}
+    {% include_relative EmbeddedCTips/varSize/avr_dump_for_int.asm %}
+    {% endhighlight %}
+    </td>
+</tr>
+</table>
+
+# Avoid floats if no FPU (architecture dependent)
+
+*Generally*, low-end microcontroller doesn't come with a FPU (floating point unit) with it's CPU.
+The FPU is a hardware block that assists in doing floating point (think decimal/fractional numbers) math.
+Without this FPU, the toolchain will include software floating point, which is ***painfully slow***, at least compared to integer arithmetic.
+
+With that said, if your application is not bottle necked with software floating point, by all means use those. Remember, don't pre-optimize until needed.
+
+With that said, if you need to apply fractional math, and software floating point is too slow for your application, you can always use fixed point math. I will leave [the Wikipedia article](https://en.wikipedia.org/wiki/Fixed-point_arithmetic) on it if you want to do further reading.
+
+# Looping N times {#loopNTimes}
+If you have a function that loops around `n` times which is passed, an initial implementation would be to use the for loop:
+```c
+void doLoop(char *text, uint8_t n){
+    for(uint8_t i=0;i<n;i++){
+        doSomething();
+    }
+}
+```
+
+But I prefer another method: the while loop. We use `n` as the condition for the while loop while decrementing it per itteration. The while statement loops until the condition is false (which is 0), so it will exit when `n=0`. The following is a C implementation:
+```c
+void doLoop(char *text, uint8_t n){
+    while(n--){
+        doSomething();
+    }
+}
+```
+
+This method in my opinion is more readable, and *should* save on instructions as one doesn't need to create an `i` variable and keep track of that. Plus CPUs are good as checking if a value is zero, versus having to compare two values then check the result.
+
+Below is the dis-assembly of both functions, compiled with `-Ofast` optimization for an AVR system, allowing the compiler to go to town. 
+
+*note: Each code block is scroll-able, you may have to scroll to view more details*
+
+<table class="codeGrid">
+<tr>
+    <td>For Loop</td>
+    <td>While Loop</td>
+    <td>Do While Loop</td>
+</tr>
+
+<tr>
+    <td>
+    {% highlight nasm %}
+    {% include_relative EmbeddedCTips/loops/avr_dump_for.asm %}
+    {% endhighlight %}
+    </td>
+    <td>
+    {% highlight nasm %}
+    {% include_relative EmbeddedCTips/loops/avr_dump_while.asm %}
+    {% endhighlight %}
+    </td>
+    <td>
+    {% highlight nasm %}
+    {% include_relative EmbeddedCTips/loops/avr_dump_doWhile.asm %}
+    {% endhighlight %}
+    </td>
+</tr>
+</table>
+
+You might notice another method I added: `do while`. As I was typing this up, I figured I try it out, and it turns out it is more efficient than the while loop. This makes sense thinking about it: the while loop requires an initial check to see if `i == 0`, versus the `do-while` which just checks at the end, where it branches off anyways.
+It is implemented as follows:
+```c
+void doLoopDoWhile(char *text, uint8_t n){
+    do{
+        doSomething();
+    }while(--n);
+}
+```
+
+I will post an ARM comparison soon (need to document the generated assembly)
+
+<!--I also ran the same test with an ARM Cortex M0 architecture, and got the following results:-->
+
+<!-- It surprised me that the for loop has less instructions than the while loop. This is probably the arm-gcc compiler catching on to the for loop and optimizing for it. The `do-while` still wins. -->
+
+If your function used the incrementing variable `i`, this method is not that applicable.
+With that said, if all you are using `i` for is to step through an array (for example to print text), a better way of doing so can be found [in the section below](#arrayIncrement)
+
+
+# Stepping through arrays inside function {#arrayIncrement}
+Let's say you have an array, like a string, to increment in a function (this can also apply outside of a function, but not as common). Let's say the function is as follows:
+```c
+void doLoop(char *text, uint8_t n){
+    for(int i=0;i<n;i++){
+        print(text[i]);
+    }
+}
+```
+
+Instead of getting the value of the array at offset `i`, I prefer think of the array passed as a pointer, which is what it really is.
+
+So I would get the value of the current pointer location through the `*` operator, then increment the pointer itself.
+```c
+void doLoop(char *text, uint8_t n){
+    do{
+        // *text returns the value at the pointer location,
+        // and text++ increments the pointer
+        print(*text++);
+    }while(--n);
+}
+```
+
+This is useful if the contents of `text` only needs to be used once, otherwise you loose the original pointer location, making this trick a bit mute.
