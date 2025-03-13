@@ -250,3 +250,25 @@ If the divisor is part of the design you construct, for example a buffer size yo
 Why do this?
 Well a modulus, if the compiler did not optimize for it (which it should if the divisor is a constant), will be an expensive division operation. Many low-end processors don't come with a division instruction, so you are spending time doing software division. Even if the processor comes with hardware division, it may take a couple or more instruction cycles to complete.
 Compare that to the AND operation, which is common for all processors, and tends to take only a single instruction cycle.
+
+# Utilize #define for substitution constants
+
+If you have a constant variable that is used to define a single data type, such as an integer for a IO pin, you are better off using the C processor to substitute in the desired value. An easy example is defining the IO pin number for an Arduino program.
+
+Defining the variable as a const reserves it in flash with all other constants, requires the instruction to fetch the constant value from memory to use it, and depending on the architecture and compiler it will be copied to RAM on startup.
+
+Compare this to a define, where the value it will be merely substitute in-place before the compilation step. This saves a memory allocation when the value can easily by substituted with a single load-immediate instruction, which tends to be cheaper than reading from memory.
+
+Below are an example of both using the pre-processor and using a constant variable.
+```c
+#define LED_IO  5
+
+const uint8_t led_io = 5;
+
+void setup(){
+    // both functions to exactly the same thing, but the define saves on a variable.
+    pinMode(LED_IO, OUTPUT);
+    pinMode(led_io, OUTPUT);
+}
+```
+
