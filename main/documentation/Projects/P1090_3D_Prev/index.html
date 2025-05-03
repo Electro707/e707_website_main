@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="Jamal Bouajjaj (electro707)" />
+    <title>P1090 3D Preview</title>
+    
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script type="importmap">
+		{
+            "imports": {
+              "three": "https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js",
+              "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <div id="canvasDiv"></div>
+
+    <script type="module">
+        // partially from https://github.com/donmccurdy/three-gltf-viewer/blob/main/src/viewer.js
+        // partially from https://github.com/mrdoob/three.js/blob/master/examples/webgl_animation_skinning_ik.html
+        import * as THREE from 'three';
+
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { TransformControls } from 'three/addons/controls/TransformControls.js';
+        import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+        import Stats from 'three/addons/libs/stats.module.js';
+        import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+
+        let scene, camera, renderer, orbitControls;
+        let transformControls = {};
+        let stats;
+        const OOI = {};
+
+        const actions = {
+            explodedView: false,
+            autoRotate: true
+        };
+
+        init();
+
+        async function init() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color( 0xaaaaaa );
+
+            camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.001, 5000 );
+            camera.position.set( 20, 15, 20 );
+
+            const ambientLight = new THREE.AmbientLight( 0xffffff, 2 ); // soft white light
+			scene.add( ambientLight );
+
+            const dirLight = new THREE.DirectionalLight(0xffffff, 10);
+            dirLight.position.set(-5, 5, 10);
+            dirLight.target.position.set(5, 0, 5);
+            scene.add( dirLight );
+
+            const dirLight2 = new THREE.DirectionalLight(0xffffff, 0.1);
+            dirLight2.position.set(5, 1, -15);
+            dirLight2.target.position.set(5, 5, 0);
+            scene.add( dirLight2 );
+
+            // const gridHelper = new THREE.GridHelper(10, 10); // Size and divisions
+            // scene.add(gridHelper);
+
+            const dracoLoader = new DRACOLoader();
+			dracoLoader.setDecoderPath( 'jsm/libs/draco/' );
+			const gltfLoader = new GLTFLoader();
+			gltfLoader.setDRACOLoader( dracoLoader );
+
+            const gltf = await gltfLoader.loadAsync( 'Assembly.gltf' );
+            // const gltf = await gltfLoader.loadAsync( 'Assembly-Assembly.gltf' );
+            // scale units in cm
+            gltf.scene.scale.set(100, 100, 100);
+            gltf.scene.traverse( n => {
+
+                if(n.name === 'Body001') OOI.topCover = n;
+                if(n.name === 'SingleDigitVFDDriver_002') OOI.pcb = n;
+
+                // chargpt generated, with tree.js mentor model
+                // if (n.isMesh) {
+                //     const oldMat = n.material;
+                //     n.material = new THREE.MeshStandardMaterial({
+                //         map: oldMat.map,
+                //         color: oldMat.color,
+                //         metalness: 0.4,
+                //         roughness: 1.0
+                //     });
+                // }
+                
+            } );
+            scene.add( gltf.scene );
+
+            renderer = new THREE.WebGLRenderer( { antialias: true } );
+			renderer.setPixelRatio( window.devicePixelRatio );
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.setAnimationLoop( animate );
+			document.getElementById('canvasDiv').appendChild( renderer.domElement );
+
+            orbitControls = new OrbitControls( camera, renderer.domElement );
+			orbitControls.minDistance = 0.1;
+			// orbitControls.maxDistance = 1.5;
+            orbitControls.autoRotate = true;
+			orbitControls.enableDamping = false;
+            orbitControls.target.set(8.9/2, 2, -8.2/2);
+
+            const t = new TransformControls( camera, renderer.domElement );
+			t.size = 0.75;
+			t.showX = false;
+			t.space = 'world';
+			t.attach( OOI.topCover );
+			scene.add( t.getHelper() );
+            t.addEventListener( 'mouseDown', () => orbitControls.enabled = false );
+			t.addEventListener( 'mouseUp', () => orbitControls.enabled = true );
+            transformControls['topCov'] = t;
+            
+            OOI.topCover.importPos = OOI.topCover.position.clone();
+            OOI.pcb.importPos = OOI.pcb.position.clone();
+
+            stats = new Stats();
+			document.getElementById('canvasDiv').appendChild( stats.dom );
+            
+
+            window.addEventListener( 'resize', onWindowResize, false );
+
+            const gui = new GUI();
+            
+            const explodedViewAct = gui.add(actions, 'explodedView').name("Exploded View");
+            explodedViewAct.onChange(() => updateExplodedView());
+            const autoRotAct = gui.add(actions, 'autoRotate').name("Auto-Rotate Camera");
+            autoRotAct.onChange(() => updateAutoRotate());
+            gui.open();
+        }
+
+        function animate( ) {
+
+            orbitControls.update(0.05);
+            renderer.render( scene, camera );
+
+            stats.update(); // fps stats
+        }
+
+        function updateAutoRotate(){
+            orbitControls.autoRotate = actions.autoRotate;
+        }
+
+        function updateExplodedView(){
+            if(actions.explodedView){
+                OOI.topCover.position.copy(OOI.topCover.importPos);
+                OOI.pcb.position.copy(OOI.pcb.importPos);
+                
+                OOI.topCover.position.y += 0.1;
+                OOI.pcb.position.y += 0.025;
+            } else {
+                OOI.topCover.position.copy(OOI.topCover.importPos);
+                OOI.pcb.position.copy(OOI.pcb.importPos);
+            }
+        }
+
+        function onWindowResize() {
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize( window.innerWidth, window.innerHeight );
+
+        }
+    </script>
+</body>
