@@ -39,7 +39,7 @@ This page will be very opinionated (it is my site after all). Be warned!
 
 ---
 Table of Contents:
-<!-- todo: look into having only # header, or have a hierarchy -->
+{: .pNoMargin}
 * Do not remove this line (it will not be displayed)
 {:toc}
 ---
