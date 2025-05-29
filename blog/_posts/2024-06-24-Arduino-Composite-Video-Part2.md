@@ -14,6 +14,8 @@ Preface: This page loads MaxJax with the following code.
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 ```
 
+> EDIT 2025-05-28: I have published the code I used in this post [on my Github](https://github.com/Electro707/arduino_ntsc_dac), feel free to check it out.
+
 Welcome back to Part 2 of my Arduino Composite video adventures!
 
 Last time in [Part 1]({{site.url}}/electronics/2024/06/18/Arduino-Composite-Video.html), I went a little bit over composite video, the analog circuitry (just a DAC) and pin mapping for an Atmega328P drive.
