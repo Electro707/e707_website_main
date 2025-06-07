@@ -39,6 +39,10 @@ a:hover { color: var(--background-color); background-color: var(--base-color); }
   text-indent: 2em;
 }
 
+.footnotes p {
+  margin-bottom : 0em;
+}
+
 /**
  * Layout
  */
