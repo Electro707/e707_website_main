@@ -51,6 +51,7 @@
           <a href="https://www.linkedin.com/in/jamal-bouajjaj-93755514a/" target="_blank" style="grid-column: 2; grid-row: 1"><img alt="Linkedin Profile Link" src="Resources/Icons/linkedin.png"></a>
           <a href="https://github.com/Electro707" target="_blank" style="grid-column: 3; grid-row: 1"><img alt="GitHub Profile Link" src="Resources/Icons/github.png"></a>
           <a href="https://gitlab.com/Electro707" target="_blank" style="grid-column: 4; grid-row: 1"><img alt="GitLab Profile Link" src="Resources/Icons/gitlab.png"></a>
+          <a href="https://bsky.app/profile/electro707.com" target="_blank" style="grid-column: 5; grid-row: 1"><img alt="Bluesky Profile Link" src="Resources/Icons/bluesky.png"></a>
         </div>
         
         <p class="description" style="margin-top: 10px; margin-bottom: 5px;">
