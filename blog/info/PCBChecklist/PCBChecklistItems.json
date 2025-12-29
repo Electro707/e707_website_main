@@ -1,0 +1,149 @@
+{
+    "nameRev": "Electro707's Checklist Rev 0.1",
+    "Schematic, Generic":[
+        {
+            "id": "s1",
+            "text": "Run ERC, ensure all errors are accounted for",
+            "info": "While the ERC I personally don't find that useful, they can potentially catch unwanted errors"
+        },
+        {
+            "id": "s2",
+            "text": "Ensure title block is somewhat correct",
+            "info": "While not as needed for a personal project, I think at least some title and a revision at minimum should be entered"
+        },
+        {
+            "id": "s3",
+            "text": "Ensure a nominal passive voltage/power/tolerances spec are listed",
+            "info": "This is to ensure that nominal capacitor voltages and resistor tolerances required for the design are stated. For example a digital circuit may only need 16v caps, while something else might require 25v caps nominally"
+        },
+        {
+            "id": "s4",
+            "text": "Check that all passives with non-nominal rating (especially capacitor voltage) is explicitly called out",
+            "info": "This is so non-nominal capacitors (for example a 100v capacitor for POE) is explicitly called out, as the rest of the design could use 25v rated caps"
+        },
+        {
+            "id": "s5",
+            "text": "Check pinout of any previously unused symbol against datasheet",
+            "info": "It's not a bad idea to double check in case the library creator got it wrong. It will be a pain to debug if two pins are swapped for example"
+        },
+        {
+            "id": "s6",
+            "text": "Ensure footprint of symbols are set to IPC M side if pcb space allows",
+            "info": "To make passives hand solderable if space on the board allows. In KiCAD these are generally the footprint labeled with 'HandSolderable'. This is here as it's in the schematic that the footprints are decided"
+        },
+        {
+            "id": "s7",
+            "text": "Inverted signals should be indicated (bar on top or _N suffix)",
+            "info": "To indicate to the reader which net labels are functionally inverted"
+        }
+    ],
+    "Schematic, Digital":[
+        {
+            "id": "sdig1",
+            "text": "Check that a microcontroller's pin functions is allowed on that pin, either fixed function per pin or an internal mux",
+            "info": "For example if SDA is allowed on PC6 on at ATMega328P. Some MCUs, like PIC32, have a PPS mux thing that doesn't allow any pin to connect to any peripheral, so it's impervious that is checked"
+        },
+        {
+            "id": "sdig2",
+            "text": "Double check I2C and SPI connections (SDA vs SCL for example)",
+            "info": "N/A"
+        },
+        {
+            "id": "sdig3",
+            "text": "Triple check UART directionality, or add poka-yoke",
+            "info": "N/A"
+        }
+    ],
+    "PCB, Generic":[
+        {
+            "id": "p1",
+            "text": "Check design rule check matches manufacturer tolerances",
+            "info": "N/A"
+        },
+        {
+            "id": "p2",
+            "text": "Run DRC, ensure no unexpected errors",
+            "info": "N/A"
+        },
+        {
+            "id": "p3",
+            "text": "Ensure copper pours have no neck-downs",
+            "info": "N/A"
+        },
+        {
+            "id": "p4",
+            "text": "Ensure copper pours are tied to a net",
+            "info": "N/A"
+        },
+        {
+            "id": "p5",
+            "text": "Check footprint of any previously unused footprint against datasheet",
+            "info": "N/A"
+        }
+    ],
+    "PCB, Silkscreen":[
+        {
+            "id": "ps1",
+            "text": "Check that reference designators are close to their component",
+            "info": "N/A"
+        },
+        {
+            "id": "ps2",
+            "text": "Check for pcb part number and revision on silkscreen",
+            "info": "N/A"
+        },
+        {
+            "id": "ps3",
+            "text": "Check that silkscreen text is visible and not obscured by components in 3D viewer",
+            "info": "N/A"
+        },
+        {
+            "id": "ps4",
+            "text": "Check that silkscreen on bottom side of the board are inverted",
+            "info": "N/A"
+        }
+    ],
+    "PCB, Mechanical":[
+        {
+            "id": "pm1",
+            "text": "Check that the board with components fits inside the enclosure, including mounting hole size (if any)",
+            "info": "N/A"
+        },
+        {
+            "id": "pm2",
+            "text": "Check for screw head clearance, and mark outline in silkscreen if room allows",
+            "info": "N/A"
+        }
+    ],
+    "PCB, High Voltage":[
+        {
+            "id": "phv1",
+            "text": "Ensure adequate clearance and creepage around high voltage traces",
+            "info": "N/A"
+        },
+        {
+            "id": "phv2",
+            "text": "For any area of the board with ,>50v, add a high voltage warning on the silkscreen",
+            "info": "N/A"
+        }
+    ],
+    "PCB, Feedback Resistors":[
+        {
+            "id": "pf1",
+            "text": "Check that feedback network resistors, such as those in an op-amp, are close to the op-amp",
+            "info": "N/A"
+        }
+    ],
+    "Gerbers":[
+        {
+            "id": "g1",
+            "text": "Check board outline layer is correct",
+            "info": "This is so easy to miss, I though it should be its own check"
+        },
+        {
+            "id": "g2",
+            "text": "Quickly go through generated gerber files and individually check each layer",
+            "info": "Sometimes, in my experience, some things are only caught in this functional check, for example not noticing an incorrect solder mask"
+        }
+    ]
+}

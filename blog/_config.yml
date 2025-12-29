@@ -57,8 +57,11 @@ footerText: <p>Jamal Bouajjaj. 2025. <a href="https://github.com/Electro707/e707
 # Jekyll Console specific 
 header_pages:
   - index.md
-  - info/EmbeddedCTips.md
   - about.md
+
+static_pages:
+  - info/EmbeddedCTips.md
+  - info/PCBChecklist.md
 
 style: dark
 listen_for_clients_preferred_style: false

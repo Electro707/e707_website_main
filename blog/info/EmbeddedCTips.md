@@ -2,7 +2,7 @@
 layout: page
 title:  "Embedded Tips"
 categories: programming
-date: 2025-03-03
+date: 2025-12-28
 --- 
 
 <style type="text/css">
@@ -54,11 +54,11 @@ For example if you are software floating math, don't try to convert it to fixed 
 BUT, you should try to use good design programming paradigms in your code, which is both good practice and can make your code run better.
 You should also be somewhat weary of what can be an obvious bottleneck, so that if your firmware needs to be optimized you know what to work on first.
 
-# Learn the instruction set
+# Optionally learn the instruction set
 
 When you are dealing with a new CPU architecture, especially for a larger/professional project, I would have a quick glance at the instruction set.
 
-While for the most part you will let the compiler handle things, you might have a project that directly can be solved by 1 or a couple of instructions.
+While for the most part you will let the compiler handle things, and this is not strictly required, you might have a project that directly can be solved by 1 or a couple of instructions.
 For example if you are dealing with a ARM Cortex M0 processor, to reverse bits of a word, you *can* do a C implementation, or you can use the built-in `REV` instruction.
 
 It will also give you a better idea of what the processor is capable of, and you will be better positioned if you *have* to optimize things in assembly due to constraints.
@@ -130,7 +130,7 @@ void doLoop(char *text, uint8_t n){
 }
 ```
 
-But I prefer another method: the while loop. We use `n` as the condition for the while loop while decrementing it per itteration. The while statement loops until the condition is false (which is 0), so it will exit when `n=0`. The following is a C implementation:
+But I prefer another method: the while loop. We use `n` as the condition for the while loop while decrementing it per iteration. The while statement loops until the condition is false (which is 0), so it will exit when `n=0`. The following is a C implementation:
 ```c
 void doLoop(char *text, uint8_t n){
     while(n--){
@@ -253,7 +253,7 @@ Compare that to the AND operation, which is common for all processors, and tends
 
 # Utilize #define for substitution constants
 
-If you have a constant variable that is used to define a single data type, such as an integer for a IO pin, you are better off using the C processor to substitute in the desired value. An easy example is defining the IO pin number for an Arduino program.
+If you have a constant variable that is used to define a single data type, such as an integer for a IO pin, you are better off using the C pre-processor to substitute in the desired value. An easy example is defining the IO pin number for an Arduino program.
 
 Defining the variable as a const reserves it in flash with all other constants, requires the instruction to fetch the constant value from memory to use it, and depending on the architecture and compiler it will be copied to RAM on startup.
 

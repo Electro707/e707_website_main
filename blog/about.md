@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Welcome to my personal blog! Here I will ramble, talk about electornics, and more.
+Welcome to my personal blog! Here I will ramble on random stuff, talk about electronics, and more.
 
-This page is created with Jekyll with the jekyll-theme-console theme. Check both of them out bellow:
+This page is created with Jekyll with a modified version of the jekyll-theme-console theme. Check both of them out below:
 
 [jekyll](https://jekyllrb.com/)
 [jekyll-theme-console](https://github.com/b2a3e8/jekyll-theme-console)
