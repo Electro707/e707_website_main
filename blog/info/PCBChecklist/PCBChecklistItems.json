@@ -1,5 +1,8 @@
 {
-    "nameRev": "Electro707's Checklist Rev 0.1",
+    "conf":{
+        "nameRev": "Electro707's Checklist Rev 0.1",
+        "checkExtraFields": []
+    },
     "Schematic, Generic":[
         {
             "id": "s1",
