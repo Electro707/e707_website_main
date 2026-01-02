@@ -2,7 +2,7 @@
 layout: page
 title:  "Schematic and PCB Checklist"
 categories: programming
-date: 2026-01-01
+date: 2026-01-02
 ---
 
 <style type="text/css">
@@ -97,6 +97,7 @@ If you would like to contribute to this list or the page, feel free to submit a 
     - Moved the revision/name and the above new field to a top-level `conf` field
     - Added notes per individual check item through a drop-down, to make note during the checklist for example
     - Fixed issue where UTC time instead of local time was used in determining current date
+- **2026-01-02**: Changed button detection from `e.isPrimary`, which only worked in Firefox, to `e.button==0`
 
 # Checklist
 
@@ -206,7 +207,7 @@ Click on an item's right triangle marker to drop-down a notes area per item to t
         Array.from(document.querySelectorAll('#checklistDiv select')).forEach(inp => {
             inp.addEventListener("click", (e) => {
                 e.preventDefault();
-                if(!e.isPrimary) return;
+                if(!e.button == 0) return;
                 if(inp.value == ''){
                     inp.value = 'X';
                 } else {
