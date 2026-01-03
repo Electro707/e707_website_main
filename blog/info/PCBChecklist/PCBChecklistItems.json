@@ -1,7 +1,7 @@
 {
     "conf":{
-        "nameRev": "Electro707's Checklist Rev 0.1",
-        "checkExtraFields": []
+        "nameRev": "Electro707's Checklist Rev 0.2",
+        "checkExtraFields": ["N/A"]
     },
     "Schematic, Generic":[
         {
@@ -31,7 +31,7 @@
         },
         {
             "id": "s6",
-            "text": "Ensure footprint of symbols are set to IPC M side if pcb space allows",
+            "text": "Ensure footprint of symbols are set to maximal pad size if pcb space allows for hand-solderability",
             "info": "To make passives hand solderable if space on the board allows. In KiCAD these are generally the footprint labeled with 'HandSolderable'. This is here as it's in the schematic that the footprints are decided"
         },
         {
@@ -60,7 +60,7 @@
     "PCB, Generic":[
         {
             "id": "p1",
-            "text": "Check design rule check matches manufacturer tolerances",
+            "text": "Check design rule check matches manufacturer tolerances, if different than default",
             "info": "N/A"
         },
         {
@@ -80,7 +80,7 @@
         },
         {
             "id": "p5",
-            "text": "Check footprint of any previously unused footprint against datasheet",
+            "text": "Check footprint (especially self-made) of any previously unused footprint against datasheet",
             "info": "N/A"
         }
     ],
@@ -97,19 +97,24 @@
         },
         {
             "id": "ps3",
-            "text": "Check that silkscreen text is visible and not obscured by components in 3D viewer",
+            "text": "Check that silkscreen text is visible and not obscured by components in 3D viewer, if possible",
             "info": "N/A"
         },
         {
             "id": "ps4",
             "text": "Check that silkscreen on bottom side of the board are inverted",
             "info": "N/A"
+        },
+        {
+            "id": "ps5",
+            "text": "(optional) Add easter eggs",
+            "info": "Silksreeen is free, might as well go nuts"
         }
     ],
     "PCB, Mechanical":[
         {
             "id": "pm1",
-            "text": "Check that the board with components fits inside the enclosure, including mounting hole size (if any)",
+            "text": "Check that the board with components fits inside the enclosure, including mounting hole size (if already designed or fixed)",
             "info": "N/A"
         },
         {
@@ -126,25 +131,20 @@
         },
         {
             "id": "phv2",
-            "text": "For any area of the board with ,>50v, add a high voltage warning on the silkscreen",
+            "text": "For any area of the board with >50v, add a high voltage warning on the silkscreen",
             "info": "N/A"
         }
     ],
     "PCB, Feedback Resistors":[
         {
             "id": "pf1",
-            "text": "Check that feedback network resistors, such as those in an op-amp, are close to the op-amp",
-            "info": "N/A"
+            "text": "Check that high impedance paths, such as those feedback resistors in an op-amp circuit, are close to the component",
+            "info": "High impedance line running across the board is just asking for coupling of any E-fields"
         }
     ],
     "Gerbers":[
         {
             "id": "g1",
-            "text": "Check board outline layer is correct",
-            "info": "This is so easy to miss, I though it should be its own check"
-        },
-        {
-            "id": "g2",
             "text": "Quickly go through generated gerber files and individually check each layer",
             "info": "Sometimes, in my experience, some things are only caught in this functional check, for example not noticing an incorrect solder mask"
         }
