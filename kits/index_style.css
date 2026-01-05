@@ -1,10 +1,8 @@
 @import url('_fonts/robot_font.css');
-body{
-    background-color: #81d4fa;
-    font-family: 'Roboto', sans-serif;
-}
+
+@import url('base.css');
+
 #intro{
-    color: black;
     text-align: center;
 }
 #intro > h1{
@@ -33,9 +31,11 @@ th, td {
 }
 tr{
     background-color: #faa781;
+    color: black;
 }
 tr.toprow{
     background-color: #f26e25;
+    color: black;
 }
 
 @media screen and (max-width: 1050px) {
@@ -50,12 +50,14 @@ tr.toprow{
 #home_link > a{
 	font-weight: bold; 
 	align-items: center; 
-	background: #ffa343; 
+	background: #77c4f8; 
 	width: fit-content; 
 	color: black;
     display: flex;
     text-decoration: none;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #home_link > a > *{

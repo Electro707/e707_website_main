@@ -1,22 +1,18 @@
 @import url('_fonts/robot_font.css');
+@import url('base.css');
 
-body{
-	background-color: #81d4fa;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-	line-height: 1.15;
-}
 a{
-	color: rgb(0, 0, 180);
-	text-decoration: inherit;
+	color: #cd9a7a;
+	text-decoration: underline;
   	background-color: inherit;
 }
 
 #top_home_div{
 	align-items: center; 
 	display: flex; 
-	background: #ffa343; 
-	width: 100%;
+	background: #77c4f8; 
+	width: 25%;
+	margin-bottom: 2em;
 }
 
 #top_home_div > *{
@@ -24,11 +20,12 @@ a{
 	margin: 0px;
 	font-weight: bold; 
 	color: black;
+	text-decoration-color: black;
+	text-decoration: underline;
 	font-size: 20px;
 }
 
 #intro{
-    color: black;
     line-height: 1.0;
 }
 #intro>*{
@@ -54,20 +51,26 @@ p{
     word-wrap: break-word;
     max-width: 1000px;
 }
+
+
 h3{
     font-size: 28px;
 }
+h3:before {
+	content: "» ";
+}
+
 h4{
 	font-weight: bold;
 }
 
 #warning{
-	color:#F00;
+	color:#f33;
 	line-height: 0.0;
 }
 
 .note_prefix{
-	color:rgb(120, 80, 0);
+	color:#fb3;
 	font-weight: bold;
 }
 

@@ -15,7 +15,7 @@
         <div class="content_md">
             <h1>Soldering Guide - Main Driver</h1>
             <p>This page guides you through soldering a 4-in-a-row kit's main board, step by step.</p>
-            <p>These steps are my recommendation, but feel free to deviate of a certain order is easier for you!</p>
+            <p>These steps are my recommendation, but feel free to deviate if a certain order is easier for you!</p>
         </div>
 
         <div id="step_step">

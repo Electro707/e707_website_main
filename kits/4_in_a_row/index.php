@@ -13,7 +13,7 @@
 
         <div id="intro">
             <h1>4-In-A-Row Kit</h1>
-            <h3>v1.0</h3>
+            <h2>v1.0</h2>
             <h2>Designed by Electro707, Soldered by you!</h2>
         </div>
 
@@ -34,7 +34,7 @@
         <h3>Step-By-Step Instruction:</h3>
         <p>If you prefer a step-by-step instruction rather than a single drawing, then click on the link below to go to a step-by-step guide.</p>
         <p>Currently only the main driver board has these instructions:</p>
-        <a href="step_main"><p>-> Main Board Step-By-Step Link</p></a>
+        <a href="step_main"><p style="background-color: #032d3f; border: 2px dashed white; padding:5px; font-weight: bold; ">Main Board Step-By-Step Link</p></a>
 
         <h3>Instructions Drawings:</h3>
         <p>Below are instruction drawings</p>
