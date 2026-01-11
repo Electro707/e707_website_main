@@ -15,7 +15,7 @@
         <div class="content_md">
             <h1>Soldering Guide - Main Driver</h1>
             <p>This page guides you through soldering a 4-in-a-row kit's main board, step by step.</p>
-            <p>These steps are my recommendation, but feel free to deviate if a certain order is easier for you!</p>
+            <p>These steps are my recommendation, but feel free to deviate of a certain order is easier for you!</p>
         </div>
 
         <div id="step_step">
@@ -33,42 +33,38 @@
             </figure>
             <figure class="figure">
                 <img src="step_drawings/populating_4.png" class="figure-img img-fluid rounded">
-                <figcaption class="figure-caption"> Then we solder The top 330Ω resistor</figcaption>
-            </figure>
-            <figure class="figure">
-                <img src="step_drawings/populating_5.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> Then we populate all 2N3904 transistors</figcaption>
             </figure>
             <figure class="figure">
-                <img src="step_drawings/populating_6.png" class="figure-img img-fluid rounded">
+                <img src="step_drawings/populating_5.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> We populate the 12pF capacitors for the crystal</figcaption>
             </figure>
             <figure class="figure">
-                <img src="step_drawings/populating_7.png" class="figure-img img-fluid rounded">
+                <img src="step_drawings/populating_6.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> And then the crystal itself</figcaption>
             </figure>
             <figure class="figure">
-                <img src="step_drawings/populating_8.png" class="figure-img img-fluid rounded">
+                <img src="step_drawings/populating_7.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> Then we populate the ICs. In this drawing, the ICs are directly shown. THIS IS NOT RECOMMENDED. Instead, use the pin headers, and then push the component into them.</figcaption>
             </figure>
             <figure class="figure">
-                <img src="step_drawings/populating_9.png" class="figure-img img-fluid rounded">
+                <img src="step_drawings/populating_8.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> Then we populate the switch</figcaption>
             </figure>
             <figure class="figure">
-                <img src="step_drawings/populating_10.png" class="figure-img img-fluid rounded">
+                <img src="step_drawings/populating_9.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> And the main indicator diode</figcaption>
             </figure>
             <figure class="figure">
-                <img src="step_drawings/populating_11.png" class="figure-img img-fluid rounded">
+                <img src="step_drawings/populating_10.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> The USB connector</figcaption>
             </figure>
             <figure class="figure">
-                <img src="step_drawings/populating_12.png" class="figure-img img-fluid rounded">
+                <img src="step_drawings/populating_11.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> Then finally, the side pin sockets that will interconnect to the main board</figcaption>
             </figure>
             <figure class="figure">
-                <img src="step_drawings/populating_13.png" class="figure-img img-fluid rounded">
+                <img src="step_drawings/populating_12.png" class="figure-img img-fluid rounded">
                 <figcaption class="figure-caption"> OPTIONALLY, solder U1 if you intend to use an external 7-12v source (such as a 9v battery)</figcaption>
             </figure>
         </div>
