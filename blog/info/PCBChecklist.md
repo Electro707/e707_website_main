@@ -98,6 +98,7 @@ If you would like to contribute to this list or the page, feel free to submit a 
     - Added notes per individual check item through a drop-down, to make note during the checklist for example
     - Fixed issue where UTC time instead of local time was used in determining current date
 - **2026-01-02**: Changed button detection from `e.isPrimary`, which only worked in Firefox, to `e.button==0`
+- **2026-02-26**: Improved checkbox checking on both Firefox and Chrome
 
 # Checklist
 
@@ -206,8 +207,11 @@ Click on an item's right triangle marker to drop-down a notes area per item to t
         // create callback function for checkbox
         Array.from(document.querySelectorAll('#checklistDiv select')).forEach(inp => {
             inp.addEventListener("click", (e) => {
+                // console.log(e);
+                if(e.target != inp) return;
                 e.preventDefault();
-                if(!e.button == 0) return;
+                if(e.pointerType == "") return;     // in Firefox, the right-click "showPicker" also triggers a click input with no pointerType
+                // if(!e.button == 0) return;
                 if(inp.value == ''){
                     inp.value = 'X';
                 } else {
@@ -245,6 +249,7 @@ Click on an item's right triangle marker to drop-down a notes area per item to t
         });
     }
 
+    // function that clears everything to a reset state
     function clearAllCheck(){
         Array.from(document.querySelectorAll('#checklistDiv select')).forEach(cb => cb.value = "");
         Array.from(document.querySelectorAll('#checklistDiv textarea')).forEach(cb => cb.value = "");
