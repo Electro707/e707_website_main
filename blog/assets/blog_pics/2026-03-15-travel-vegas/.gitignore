@@ -1,0 +1,6 @@
+# For local files I was using to process stuff
+*.HEIC
+*.DNG
+*.PNG
+*.jpg_original
+orig/
