@@ -3,6 +3,7 @@ layout: post
 title:  "Local LAN and Firewall for Virtual Machines"
 date:   2025-8-10
 categories: computing
+includesGenerator: yes
 ---
 
 Preface: This page runs custom JS code for the generator at the bottom, but the source is non-obfuscated.
@@ -106,9 +107,9 @@ iptables -t filter -A FORWARD -o virbr10 -j REJECT --reject-with icmp-port-unrea
 
 ### input rules for dhcp/dns
 
-# Allow tcp input from the bridge into the host's local process 
+# Allow tcp input from the bridge into the host's local process
 iptables -t filter -A INPUT -i virbr10 -p udp -m udp -m multiport --dports 53,67 -j ACCEPT
-# Allow tcp input from the bridge into the host's local process 
+# Allow tcp input from the bridge into the host's local process
 iptables -t filter -A INPUT -i virbr10 -p tcp -m tcp -m multiport --dports 53,67 -j ACCEPT
 
 # something to fix some bug with dns and checksum, not 100% sure?
@@ -125,32 +126,32 @@ We will be using `dnsmasq` for the local server.
 First is to write a config file for dnsmasq. The following file can be saved to `/var/lib/dnsmasq/virbr10/dnsmasq.conf`. It could be saved anywhere, I think that directory is somewhat standard though.
 
 ```
-# Only bind to the virtual bridge. This avoids conflicts with other running  
-# dnsmasq instances.  
-except-interface=lo  
-interface=virbr10  
-bind-dynamic  
-  
-# If using dnsmasq 2.62 or older, remove "bind-dynamic" and "interface" lines  
-# and uncomment these lines instead:  
-#bind-interfaces  
-#listen-address=192.168.100.1  
-  
-# IPv4 addresses to offer to VMs. This should match the chosen subnet.  
-dhcp-range=192.168.100.2,192.168.100.254,255.255.255.0  
-  
-# Set this to at least the total number of addresses in DHCP-enabled subnets.  
-dhcp-lease-max=253  
-  
-# File to write DHCP lease information to.  
-dhcp-leasefile=/var/lib/dnsmasq/virbr10/leases  
-# File to read DHCP host information from.  
-dhcp-hostsfile=/var/lib/dnsmasq/virbr10/hostsfile  
-# Avoid problems with old or broken clients.  
-dhcp-no-override  
-# https://www.redhat.com/archives/libvir-list/2010-March/msg00038.html  
-strict-order  
-  
+# Only bind to the virtual bridge. This avoids conflicts with other running
+# dnsmasq instances.
+except-interface=lo
+interface=virbr10
+bind-dynamic
+
+# If using dnsmasq 2.62 or older, remove "bind-dynamic" and "interface" lines
+# and uncomment these lines instead:
+#bind-interfaces
+#listen-address=192.168.100.1
+
+# IPv4 addresses to offer to VMs. This should match the chosen subnet.
+dhcp-range=192.168.100.2,192.168.100.254,255.255.255.0
+
+# Set this to at least the total number of addresses in DHCP-enabled subnets.
+dhcp-lease-max=253
+
+# File to write DHCP lease information to.
+dhcp-leasefile=/var/lib/dnsmasq/virbr10/leases
+# File to read DHCP host information from.
+dhcp-hostsfile=/var/lib/dnsmasq/virbr10/hostsfile
+# Avoid problems with old or broken clients.
+dhcp-no-override
+# https://www.redhat.com/archives/libvir-list/2010-March/msg00038.html
+strict-order
+
 dhcp-authoritative
 ```
 
@@ -196,19 +197,19 @@ If you want to use it for a local net like I mentioned above, change the bridge 
         <input type="text" id="gen_subnet" style='width: 20%;' value='192.168.100.1/24'><br><br>
         <label for="fname" >Bridge Name</label>
         <input type="text" id="gen_br_name" style='width: 20%;' value='virbr10'><br><br>
-        <button type="button" onclick="genCmds()">Generate</button> 
+        <button type="button" onclick="genCmds()">Generate</button>
     </div>
     <p>Bridge and iptable rules command generator:</p>
-    <textarea id="output" readonly spellcheck="false" style='resize: none; 
+    <textarea id="output" readonly spellcheck="false" style='resize: none;
             display: block;
-            overflow: hidden; 
+            overflow: hidden;
             margin: 2%;
             width: 96%;'>
     </textarea>
     <p>dnsmasq config, to be stored in <span id='dnsmasqConfLoc'>``</span></p>
-    <textarea id="output2" readonly spellcheck="false" style='resize: none; 
+    <textarea id="output2" readonly spellcheck="false" style='resize: none;
             display: block;
-            overflow: hidden; 
+            overflow: hidden;
             margin: 2%;
             width: 96%;'>
     </textarea>
@@ -226,16 +227,16 @@ If you want to use it for a local net like I mentioned above, change the bridge 
         const [ip, prefix] = cidr.split('/');
         const ipParts = ip.split('.').map(Number);
         const mask = (0xffffffff >>> Number(prefix));
-        
+
         const ipNum =
             (ipParts[0] << 24) |
             (ipParts[1] << 16) |
             (ipParts[2] << 8) |
             ipParts[3];
-        
+
         const bcast = ipNum | mask;
         const net = ipNum & ~mask;
-        
+
         const dnsFirstHost = (Number(prefix) >= 31) ? net : (net + 2) >>> 0;
         const dnsLastHost  = (Number(prefix) >= 31) ? bcast : (bcast - 1) >>> 0;
 
@@ -248,14 +249,14 @@ If you want to use it for a local net like I mentioned above, change the bridge 
         console.log(ret)
         return ret;
     }
-    
+
     function genIptableLines(interfN, subnet, isRemove){
         const ipLines = [];
         var aOrD = '-A'
         if(isRemove === true){
             aOrD = '-D'
         }
-        
+
         ipLines.push(`iptables -t nat ${aOrD} POSTROUTING -s ${subnet} -d 224.0.0.0/24 -j RETURN`);
         ipLines.push(`iptables -t nat ${aOrD} POSTROUTING -s ${subnet} -d 255.255.255.255/32 -j RETURN`);
         ipLines.push(`iptables -t nat ${aOrD} POSTROUTING -s ${subnet} ! -d ${subnet} -j MASQUERADE`);
@@ -268,51 +269,51 @@ If you want to use it for a local net like I mentioned above, change the bridge 
         ipLines.push(`iptables -t filter ${aOrD} INPUT -i ${interfN} -p udp -m udp -m multiport --dports 53,67 -j ACCEPT`);
         ipLines.push(`iptables -t filter ${aOrD} INPUT -i ${interfN} -p tcp -m tcp -m multiport --dports 53,67 -j ACCEPT`);
         ipLines.push(`iptables -t mangle ${aOrD} POSTROUTING -o ${interfN} -p udp -m udp --dport 68 -j CHECKSUM --checksum-fill`);
-        
+
         return ipLines;
     }
-    
+
     function genCmds() {
         const outField = document.getElementById('output');
         outField.value = '';     // clear in case of error
-        
+
         const ipBase = document.getElementById('gen_subnet').value.trim();
         const bridgeName = document.getElementById('gen_br_name').value.trim();
-        
+
         const ipInfo = fromCIDR(ipBase);
 
         const ipFwLines = [];
         ipFwLines.push('# Enable IP Forwarding');
         ipFwLines.push('sysctl -p');
-        
+
         const bridgeLines = [];
         bridgeLines.push('# Create a bridge device');
         bridgeLines.push(`brctl addbr ${bridgeName}`);
         bridgeLines.push(`brctl stp ${bridgeName} on`);
         bridgeLines.push(`ip address add ${ipBase} dev ${bridgeName} broadcast ${ipInfo.broadcast}`);
         bridgeLines.push(`ip link set ${bridgeName} up`);
-        
+
         const bridgeLinesRev = [];
         bridgeLinesRev.push('# Delete bridge interface');
         bridgeLinesRev.push(`ip link set ${bridgeName} down`);
         bridgeLinesRev.push(`brctl delbr ${bridgeName}`);
-        
-        
+
+
         outField.value = (ipFwLines.join('\n') || '').trim() + '\n\n';
         outField.value += (bridgeLines.join('\n') || '').trim() + '\n\n';
         outField.value += '# iptable add rules\n' + (genIptableLines(bridgeName, ipBase, false).join('\n') || '').trim() + '\n\n';
-        outField.value += '# dnsmasq command\n' + 
+        outField.value += '# dnsmasq command\n' +
                     `dnsmasq --conf-file=/var/lib/dnsmasq/${bridgeName}/dnsmasq.conf --pid-file=/var/run/dnsmasq/${bridgeName}.pid -d` + '\n\n';
         outField.value += '########## Below for teardown commands ##########\n\n';
-        
+
         outField.value += '# iptable remove rules\n' + (genIptableLines(bridgeName, ipBase, true).join('\n') || '').trim() + '\n\n';
         outField.value += (bridgeLinesRev.join('\n') || '').trim();
-        
+
         outField.style.height = outField.scrollHeight + 'px';
-        
-        
+
+
         const dnsOutField = document.getElementById('output2');
-        
+
         const dnsLines = [];
         dnsLines.push(`# Only bind to the virtual bridge. This avoids conflicts with other running # dnsmasq instances.`)
         dnsLines.push(`except-interface=lo`)
@@ -336,9 +337,9 @@ If you want to use it for a local net like I mentioned above, change the bridge 
         dnsLines.push(``)
         dnsLines.push(`dhcp-authoritative`)
         dnsLines.push(``)
-        
+
         document.getElementById('dnsmasqConfLoc').textContent = `\`/var/lib/dnsmasq/${bridgeName}/dnsmasq.conf\``;
-        
+
         dnsOutField.value = (dnsLines.join('\n') || '').trim();
         dnsOutField.style.height = dnsOutField.scrollHeight + 'px';
     }

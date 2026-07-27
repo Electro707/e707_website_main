@@ -21,3 +21,9 @@ permalink: /
 </ul>
 
 ## Blog Posts
+
+The following are blogs I have written.
+
+Anything starting with a star * includes some generator which might be handy
+
+<!-- After this point, default.html takes over the blog posts -->
