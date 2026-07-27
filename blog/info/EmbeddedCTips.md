@@ -3,7 +3,7 @@ layout: page
 title:  "Embedded Tips"
 categories: programming
 date: 2025-12-28
---- 
+---
 
 <style type="text/css">
     .codeGrid {
@@ -141,7 +141,7 @@ void doLoop(char *text, uint8_t n){
 
 This method in my opinion is more readable, and *should* save on instructions as one doesn't need to create an `i` variable and keep track of that. Plus CPUs are good as checking if a value is zero, versus having to compare two values then check the result.
 
-Below is the dis-assembly of both functions, compiled with `-Ofast` optimization for an AVR system, allowing the compiler to go to town. 
+Below is the dis-assembly of both functions, compiled with `-Ofast` optimization for an AVR system, allowing the compiler to go to town.
 
 *note: Each code block is scroll-able, you may have to scroll to view more details*
 
@@ -271,4 +271,18 @@ void setup(){
     pinMode(led_io, OUTPUT);
 }
 ```
+
+# Read up on any MCU silicon errata
+
+No silicon is perfect, and sometimes hardware bugs exists. These bugs can be a trap will cause many hours of potential painful troubleshooting, especially when you think the firmware should work as expected but it just isn't.
+Manufacturers normally would have an errata document per part, which includes the bugs, which silicon version is affected (laser marked with the part package), and any potential work around.
+
+One should always take a look at the errata for the MCU they are using, to preempt any potential issues. Really this should be done in the circuit layout stage, as depending on the severity of the errata it may not function for your desired application.
+
+As an example, looking at the ATMega328P, there is an errata for the analog comparator when a certain bit is set, setting the enable bit will not enable the mux into the comparator. If you were developing a firmware that used the analog comparator, this issue could cause what may appear to be a software bug, while the whole time it is the hardware. All silicon revisions are effected, and the work-around given is to clear that bit before enabling the mux.
+
+![Image](EmbeddedCTips/Screenshot_20260606_011205.png)
+
+This is one niche example, but there are more egregious erratas depending on what MCU you are using.
+For example the original PIC32MK MC family, not currently in production, [[had 4.2 pages worth of errata items!](https://ww1.microchip.com/downloads/en/DeviceDoc/PIC32MKGP_MC_Family_Silicon_Errata_DS80000737G.pdf). Any one of them could cause you to have a bad time! For example in that processor, item 27 is simply "Deep Sleep is non functional" with no work around. If you wanted a low power application out of that chip, too bad!
 
