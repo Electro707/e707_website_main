@@ -2,6 +2,7 @@
 layout: post
 title:  "Local LAN and Firewall for Virtual Machines"
 date:   2025-8-10
+updatedOn: 2026-09-20
 categories: computing
 includesGenerator: yes
 ---
@@ -188,15 +189,23 @@ It's also handy if you have a single device you want to give internet access to,
 # Commands Generator
 
 Below is a quick generator I made that outputs the bridge creation, iptable commands, and dnsmasq config, as well as their teardown. The `IP Mask` entry should be the IP of the host with the mask, such as the default `192.168.100.1/24`.
-If you want to use it for a local net like I mentioned above, change the bridge name to the interface name and don't run the bridge creation/teardown commands.
+If you want to use it for a local net like I mentioned above, uncheck "Is Bridge?"
 
 <div style='border-style: solid; border-width: 1px;'>
 <div class='custom'>
-    <div style="display: flex; align-items: center; gap: 8px;">
-        <label for="fname" >IP mask (with mask specifier):</label>
-        <input type="text" id="gen_subnet" style='width: 20%;' value='192.168.100.1/24'><br><br>
-        <label for="fname" >Bridge Name</label>
-        <input type="text" id="gen_br_name" style='width: 20%;' value='virbr10'><br><br>
+    <div style="display: flex; align-items: center; gap: 25px;">
+        <div style="display: block;">
+            <label for="fname" >IP mask (with mask specifier):</label>
+            <input type="text" id="gen_subnet" style='width: 100%;' value='192.168.100.1/24'><br><br>
+        </div>
+        <div style="display: block;">
+            <label for="fname" >Is Bridge?</label>
+            <input type="checkbox" id="gen_is_br" checked><br><br>
+        </div>
+        <div style="display: block;">
+            <label for="fname" >Network Name</label>
+            <input type="text" id="gen_br_name" style='width: 100%;' value='virbr10'><br><br>
+        </div>
         <button type="button" onclick="genCmds()">Generate</button>
     </div>
     <p>Bridge and iptable rules command generator:</p>
@@ -279,6 +288,7 @@ If you want to use it for a local net like I mentioned above, change the bridge 
 
         const ipBase = document.getElementById('gen_subnet').value.trim();
         const bridgeName = document.getElementById('gen_br_name').value.trim();
+        const isBridge = document.getElementById('gen_is_br').checked;
 
         const ipInfo = fromCIDR(ipBase);
 
@@ -300,14 +310,18 @@ If you want to use it for a local net like I mentioned above, change the bridge 
 
 
         outField.value = (ipFwLines.join('\n') || '').trim() + '\n\n';
-        outField.value += (bridgeLines.join('\n') || '').trim() + '\n\n';
+        if(isBridge == true){
+            outField.value += (bridgeLines.join('\n') || '').trim() + '\n\n';
+        }
         outField.value += '# iptable add rules\n' + (genIptableLines(bridgeName, ipBase, false).join('\n') || '').trim() + '\n\n';
         outField.value += '# dnsmasq command\n' +
                     `dnsmasq --conf-file=/var/lib/dnsmasq/${bridgeName}/dnsmasq.conf --pid-file=/var/run/dnsmasq/${bridgeName}.pid -d` + '\n\n';
         outField.value += '########## Below for teardown commands ##########\n\n';
 
         outField.value += '# iptable remove rules\n' + (genIptableLines(bridgeName, ipBase, true).join('\n') || '').trim() + '\n\n';
-        outField.value += (bridgeLinesRev.join('\n') || '').trim();
+        if(isBridge == true){
+            outField.value += (bridgeLinesRev.join('\n') || '').trim() + '\n\n';
+        }
 
         outField.style.height = outField.scrollHeight + 'px';
 
