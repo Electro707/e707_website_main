@@ -24,6 +24,6 @@ permalink: /
 
 The following are blogs I have written.
 
-Anything starting with a star * includes some generator which might be handy
+Anything starting with a star * includes some generator or calculator
 
 <!-- After this point, default.html takes over the blog posts -->

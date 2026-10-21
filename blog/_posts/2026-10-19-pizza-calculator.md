@@ -2,7 +2,7 @@
 layout: post
 title:  "Pizza Calculator"
 date:   2026-10-19
-updatedOn: 2026-10-19
+updatedOn: 2026-10-20
 categories: misc
 includesGenerator: yes
 ---
@@ -11,11 +11,11 @@ includesGenerator: yes
     #pizzaSizes {
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(3, 1fr) 5em;
+        grid-template-columns: 0.2fr repeat(3, 1fr) 5em;
     }
     #pizzaSizes > div {
         display: grid;
-        grid-column: 1 / 5;
+        grid-column: 1 / 6;
         grid-template-columns: subgrid;
     }
     .pizzaDiv {
@@ -33,6 +33,10 @@ includesGenerator: yes
         width: 2em;
     }
 
+    #pizzaSizes .qty {
+        text-align: center;
+    }
+
     #add_table_bt {
         display: block;
         margin: 5px auto 5px auto;
@@ -47,16 +51,17 @@ includesGenerator: yes
     }
 </style>
 
-When ordering pizza, have you ever wondered if jumping pizza sizes is worth it?
+When ordering pizza, have you ever wondered if jumping pizza sizes is worth it? What if 2 smalls is better than 1 medium?
 
-This calculator below is perfect for just that! Just enter your pizza size and cost, and it would calculate if a pizza is worth it or not.
+This calculator below is perfect for just that! Just enter your pizza size and cost, and it would calculate the cost per area, so you can determine the best pizza per dollar.
 
 <div style='border-style: solid; border-width: 1px;'>
     <div id='pizzaSizes'>
         <div id='pizzaHeader'>
+            <span>Qty</span>
             <span>Pizza Diameter</span>
             <span>Cost</span>
-            <span>$/Area</span>
+            <span>$/Total Area</span>
         </div>
         <!-- This will be populated by JS -->
     </div>
@@ -80,13 +85,14 @@ This calculator below is perfect for just that! Just enter your pizza size and c
 
         listHTML = `<div class="pizzaDiv" id=pizzaItem_${divID}>`;
 
+        listHTML += `<input type="text" class="qty" placeholder="qty" oninput="updatePizza('${divID}')" value="1"></input>`
         listHTML += `<input type="text" class="size" placeholder="Size" oninput="updatePizza('${divID}')"></input>`
         listHTML += `<input type="text" class="dollar" placeholder="$" oninput="updatePizza('${divID}')"></input>`
         listHTML += `<input type="text" class="costArea" readonly=true></input>`
         listHTML += `<button class="goodbye" onclick="goodbyePizza('${divID}')">X</button>`
 
-        listHTML += `<span class="sillyMsg" style="white-space: pre-line; display: inline-block; min-height: 1.5em; grid-column: 1 / 5;"></span>`
-        listHTML += `<span class="funFact" style="display: inline-block; min-height: 1.5em; grid-column: 1 / 5;"></span>`
+        listHTML += `<span class="funFact" style="display: inline-block; min-height: 1.5em; grid-column: 1 / 6;"></span>`
+        listHTML += `<span class="sillyMsg" style="white-space: pre-line; display: inline-block; min-height: 1.5em; grid-column: 1 / 6;"></span>`
 
         listHTML += "</div>";
 
@@ -102,60 +108,69 @@ This calculator below is perfect for just that! Just enter your pizza size and c
         const costAreaBox = list.querySelector(".costArea");
         // reset showcased value
         costAreaBox.value = "";
-        funFact.value = "";
+        funFact.textContent = "";
         sillyMsg.textContent = "";
 
         const sizeS = list.querySelector(".size").value;
         const costS = list.querySelector(".dollar").value;
+        const qtyS = list.querySelector(".qty").value;
 
         const size = sizeS.trim() === "" ? NaN : Number(sizeS);
         const cost = costS.trim() === "" ? NaN : Number(costS);
+        const qty = qtyS.trim() === "" ? NaN : Number(qtyS);
 
         var area = NaN;
+        var totalArea = NaN;
 
         if(isNaN(size) == false){
             area = Math.PI * Math.pow(size/2, 2);
 
-            funFact.textContent = `Area = ${area.toFixed(2)} in^2`;
-            if(size >= 120){
-                sillyMsg.textContent += "so you have a whole bedroom worth of a pizza?\n";
-            }
-            else if(size >= 50){
-                sillyMsg.textContent += "ok you are kidding now?\n";
-            }
-            else if(size >= 30){
-                sillyMsg.textContent += "Wow...that is a big pizza!\n";
-            }
-            else if(size != 0){
-                if(size < 0){
-                    sillyMsg.textContent += "pizza void?\n";
-                }
-                else if(size <= 0.25){
-                    sillyMsg.textContent += "pizza for ants\n";
-                }
+            funFact.textContent += `Pie Area = ${area.toFixed(2)} in^2`;
 
+
+            if (eval(atob("c2l6ZSA+PSAxMjA="))){
+                sillyMsg.textContent += atob("c28geW91IGhhdmUgYSB3aG9sZSBiZWRyb29tIHdvcnRoIG9mIGEgcGl6emE/Cg==");
+            }
+            else if (eval(atob("c2l6ZSA+PSA1MA=="))){
+                sillyMsg.textContent += atob("b2sgeW91IGFyZSBraWRkaW5nIG5vdz8K");
+            }
+            else if (eval(atob("c2l6ZSA+PSAzMA=="))){
+                sillyMsg.textContent += atob("V293Li4udGhhdCBpcyBhIGJpZyBwaXp6YSEK");
+            }
+            else if (eval(atob("c2l6ZSAhPSAw"))){
+                if (eval(atob("c2l6ZSA8IDA="))){
+                    sillyMsg.textContent += atob("cGl6emEgdm9pZD8K");
+                }
+                else if (eval(atob("c2l6ZSA8PSAwLjI1"))){
+                    sillyMsg.textContent += atob("cGl6emEgZm9yIGFudHMK");
+                }
+            }
+
+            if(isNaN(qty) == false){
+                totalArea = area * qty;
+                funFact.textContent += `, Total Area = ${totalArea.toFixed(2)} in^2`;
             }
         }
         if(isNaN(cost) == false){
-            if(cost >= 1e6){
-                sillyMsg.textContent += "millionaire pizza\n";
+            if (eval(atob("Y29zdCA+PSAxZTY="))){
+                sillyMsg.textContent += atob("bWlsbGlvbmFpcmUgcGl6emEK");
             }
-            else if(cost >= 1000){
-                sillyMsg.textContent += "mr beast challenge pizza\n";
+            else if (eval(atob("Y29zdCA+PSAxMDAw"))){
+                sillyMsg.textContent += atob("bXIgYmVhc3QgY2hhbGxlbmdlIHBpenphCg==");
             }
-            else if(cost >= 100){
-                sillyMsg.textContent += "gold platted pizza\n";
+            else if (eval(atob("Y29zdCA+PSAxMDA="))){
+                sillyMsg.textContent += atob("Z29sZCBwbGF0dGVkIHBpenphCg==");
             }
-            else if(cost >= 35){
-                sillyMsg.textContent += "some nice pizza, eh?\n";
+            else if (eval(atob("Y29zdCA+PSAzNQ=="))){
+                sillyMsg.textContent += atob("c29tZSBuaWNlIHBpenphLCBlaD8K");
             }
         }
 
-        if(isNaN(size) || isNaN(cost)){
+        if(isNaN(size) || isNaN(cost) || isNaN(qty)){
             return;
         }
 
-        const costPerArea = cost / area;
+        const costPerArea = cost / totalArea;
 
         costAreaBox.value = costPerArea.toFixed(3);
 
