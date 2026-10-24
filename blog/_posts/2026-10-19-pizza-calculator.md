@@ -2,7 +2,7 @@
 layout: post
 title:  "Pizza Calculator"
 date:   2026-10-19
-updatedOn: 2026-10-20
+updatedOn: 2026-10-24
 categories: misc
 includesGenerator: yes
 ---
@@ -121,6 +121,7 @@ This calculator below is perfect for just that! Just enter your pizza size and c
 
         var area = NaN;
         var totalArea = NaN;
+        var totalCost = NaN;
 
         if(isNaN(size) == false){
             area = Math.PI * Math.pow(size/2, 2);
@@ -164,13 +165,18 @@ This calculator below is perfect for just that! Just enter your pizza size and c
             else if (eval(atob("Y29zdCA+PSAzNQ=="))){
                 sillyMsg.textContent += atob("c29tZSBuaWNlIHBpenphLCBlaD8K");
             }
+
+            if(isNaN(qty) == false){
+                totalCost = cost * qty;
+                funFact.textContent += `, Total Cost = $${totalCost.toFixed(2)}`;
+            }
         }
 
         if(isNaN(size) || isNaN(cost) || isNaN(qty)){
             return;
         }
 
-        const costPerArea = cost / totalArea;
+        const costPerArea = totalCost / totalArea;
 
         costAreaBox.value = costPerArea.toFixed(3);
 
